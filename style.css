@@ -1,24 +1,37 @@
-body {
+/* Reset básico para remover espaços indesejados */
+* {
     margin: 0;
     padding: 0;
-    height: 100vh;
+    box-sizing: border-box;
+}
 
-    /* imagem de fundo */
+body {
+    height: 100vh;
+    width: 100%;
+    
+    /* Cor de fundo caso a imagem do link quebre ou demore a carregar */
+    background-color: #0b0d17; 
+
+    /* Configuração da imagem de fundo */
     background-image: url('https://www.shutterstock.com/image-photo/beautiful-night-sky-milky-way-600nw-2729248075.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 
-    /* centralizar conteúdo */
+    /* Centralização usando Flexbox */
     display: flex;
     justify-content: center;
     align-items: center;
 
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden; /* Evita barras de rolagem desnecessárias */
 }
 
 h1 {
     color: white;
-    font-size: 60px;
-    text-shadow: 2px 2px 10px black;
+    /* font-size dinâmico: se adapta a telas pequenas e grandes */
+    font-size: clamp(3rem, 10vw, 5rem); 
+    text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+    text-align: center;
+    padding: 20px;
 }
