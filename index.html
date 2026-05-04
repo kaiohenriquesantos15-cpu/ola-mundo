@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3F STORE | Estilo e Conforto</title>
+    <title>3F STORE | Black & Purple Edition</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,77 +13,76 @@
             <div class="logo">3F <span>STORE</span></div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#home">Início</a></li>
-                    <li><a href="#produtos">Coleção</a></li>
-                    <li><a href="#contato">Contato</a></li>
+                    <li><a href="#camisas-lisas">Lisas</a></li>
+                    <li><a href="#camisas-estampadas">Estampadas</a></li>
                 </ul>
             </nav>
             <div class="cart-icon">🛒 <span id="cart-count">0</span></div>
         </div>
     </header>
 
-    <section class="hero" id="home">
+    <section class="hero">
         <div class="hero-text">
-            <h1>Sua nova marca de estilo</h1>
-            <p>Camisas premium para todos os momentos.</p>
-            <a href="#produtos" class="cta-button">Ver Coleção</a>
+            <h1>BLACK & PURPLE</h1>
+            <p>O básico premium da 3F STORE.</p>
         </div>
     </section>
 
-    <main class="container" id="produtos">
-        <h2 class="section-title">Nossas Camisas</h2>
+    <main class="container">
+        <h2 class="section-title" id="camisas-lisas">Camisas Lisas <small>R$ 100</small></h2>
         <div class="product-grid">
-            
             <article class="product-card">
-                <div class="badge">Básico</div>
                 <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=500" alt="Camisa Lisa Branca" class="product-img">
                 <div class="product-info">
-                    <h3>Camisa Lisa Minimalista</h3>
-                    <p class="description">Algodão 100% premium, diversas cores.</p>
+                    <h3>Camisa Lisa Branca</h3>
                     <p class="price">R$ 100,00</p>
-                    <button class="buy-btn">Adicionar ao Carrinho</button>
+                    <button class="buy-btn" onclick="addToCart()">Comprar</button>
                 </div>
             </article>
 
             <article class="product-card">
-                <div class="badge">Básico</div>
                 <img src="https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?w=500" alt="Camisa Lisa Preta" class="product-img">
                 <div class="product-info">
-                    <h3>Camisa Lisa Black Edition</h3>
-                    <p class="description">Corte moderno e ajuste perfeito.</p>
+                    <h3>Camisa Lisa Preta</h3>
                     <p class="price">R$ 100,00</p>
-                    <button class="buy-btn">Adicionar ao Carrinho</button>
+                    <button class="buy-btn" onclick="addToCart()">Comprar</button>
+                </div>
+            </article>
+        </div>
+
+        <h2 class="section-title" id="camisas-estampadas">Camisas Estampadas <small>R$ 150</small></h2>
+        <div class="product-grid">
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500" alt="Camisa Estampada" class="product-img">
+                <div class="product-info">
+                    <h3>Estampa Exclusive</h3>
+                    <p class="price">R$ 150,00</p>
+                    <button class="buy-btn" onclick="addToCart()">Comprar</button>
                 </div>
             </article>
 
             <article class="product-card">
-                <div class="badge estampada">Estampada</div>
-                <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=500" alt="Camisa Estampada Urban" class="product-img">
+                <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500" alt="Camisa Estampada" class="product-img">
                 <div class="product-info">
-                    <h3>Camisa Estampada Urban</h3>
-                    <p class="description">Design exclusivo da coleção 2026.</p>
+                    <h3>Estampa Urban</h3>
                     <p class="price">R$ 150,00</p>
-                    <button class="buy-btn">Adicionar ao Carrinho</button>
+                    <button class="buy-btn" onclick="addToCart()">Comprar</button>
                 </div>
             </article>
-
-            <article class="product-card">
-                <div class="badge estampada">Estampada</div>
-                <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500" alt="Camisa Estampada Art" class="product-img">
-                <div class="product-info">
-                    <h3>Camisa Estampada Graphic</h3>
-                    <p class="description">Arte autoral em silk de alta durabilidade.</p>
-                    <p class="price">R$ 150,00</p>
-                    <button class="buy-btn">Adicionar ao Carrinho</button>
-                </div>
-            </article>
-
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2026 3F STORE. Qualidade em cada detalhe.</p>
+        <p>&copy; 2026 3F STORE - A união do preto e roxo.</p>
     </footer>
+
+    <script>
+        let count = 0;
+        function addToCart() {
+            count++;
+            document.getElementById('cart-count').innerText = count;
+        }
+    </script>
 
 </body>
 </html>
