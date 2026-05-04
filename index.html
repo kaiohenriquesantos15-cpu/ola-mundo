@@ -13,8 +13,19 @@
             <div class="logo">3F <span>STORE</span></div>
             <nav>
                 <ul class="nav-links">
-                    <li><a href="#camisas-lisas">Lisas</a></li>
-                    <li><a href="#camisas-estampadas">Estampadas</a></li>
+                    <li class="nav-item">
+                        <span class="category-title">CAMISAS</span>
+                        <div class="sub-menu">
+                            <a href="#camisas-lisas">Lisas</a>
+                            <a href="#camisas-estampadas">Estampadas</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <span class="category-title">SHORTS</span>
+                        <div class="sub-menu">
+                            <a href="#shorts-moletom">Moletom</a>
+                        </div>
+                    </li>
                 </ul>
             </nav>
             <div class="cart-icon">🛒 <span id="cart-count">0</span></div>
@@ -66,6 +77,27 @@
                 <div class="product-info">
                     <h3>Estampa Urban</h3>
                     <p class="price">R$ 150,00</p>
+                    <button class="buy-btn" onclick="addToCart()">Comprar</button>
+                </div>
+            </article>
+        </div>
+
+        <h2 class="section-title" id="shorts-moletom">Shorts <small>R$ 120</small></h2>
+        <div class="product-grid">
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500" alt="Shorts Preto" class="product-img">
+                <div class="product-info">
+                    <h3>Shorts Moletom Preto</h3>
+                    <p class="price">R$ 120,00</p>
+                    <button class="buy-btn" onclick="addToCart()">Comprar</button>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1541133569702-f9d3b5e83b53?w=500" alt="Shorts Roxo" class="product-img">
+                <div class="product-info">
+                    <h3>Shorts Premium Purple</h3>
+                    <p class="price">R$ 120,00</p>
                     <button class="buy-btn" onclick="addToCart()">Comprar</button>
                 </div>
             </article>
