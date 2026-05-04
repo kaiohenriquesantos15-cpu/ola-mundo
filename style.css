@@ -1,37 +1,129 @@
-/* Reset básico para remover espaços indesejados */
+/* Configurações Gerais */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    height: 100vh;
-    width: 100%;
-    
-    /* Cor de fundo caso a imagem do link quebre ou demore a carregar */
-    background-color: #0b0d17; 
-
-    /* Configuração da imagem de fundo */
-    background-image: url('https://www.shutterstock.com/image-photo/beautiful-night-sky-milky-way-600nw-2729248075.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    /* Centralização usando Flexbox */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    overflow: hidden; /* Evita barras de rolagem desnecessárias */
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-h1 {
+/* Header */
+header {
+    background-color: #1a1a1a;
     color: white;
-    /* font-size dinâmico: se adapta a telas pequenas e grandes */
-    font-size: clamp(3rem, 10vw, 5rem); 
-    text-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
+    padding: 1rem 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #00d4ff;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav ul li a:hover {
+    color: #00d4ff;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://via.placeholder.com/1200x400');
+    background-size: cover;
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+/* Container de Produtos */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+/* Cartão do Produto */
+.product-card {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-image {
+    background-color: #eee;
+    height: 200px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.price {
+    font-size: 1.2rem;
+    color: #27ae60;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.buy-btn {
+    background-color: #00d4ff;
+    color: #1a1a1a;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.buy-btn:hover {
+    background-color: #008fb3;
+    color: white;
+}
+
+/* Rodapé */
+footer {
+    background: #1a1a1a;
+    color: white;
     text-align: center;
     padding: 20px;
+    margin-top: 40px;
 }
