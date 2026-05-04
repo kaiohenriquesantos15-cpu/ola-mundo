@@ -3,57 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minha Loja Online</title>
+    <title>TechStore | O Futuro Hoje</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <header>
-        <div class="logo">TechStore</div>
-        <nav>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">Tech<span>Store</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#produtos">Produtos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="cart-icon">🛒 <span id="cart-count">0</span></div>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Ofertas Incríveis</h1>
-        <p>Os melhores gadgets com os melhores preços.</p>
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <h1>Tecnologia sem limites</h1>
+            <p>Frete grátis para todo o Brasil em compras acima de R$ 299.</p>
+            <a href="#produtos" class="cta-button">Ver Ofertas</a>
+        </div>
     </section>
 
-    <main class="container">
-        <h2>Destaques</h2>
+    <main class="container" id="produtos">
+        <h2 class="section-title">Produtos em Destaque</h2>
         <div class="product-grid">
             
-            <div class="product-card">
-                <div class="product-image"></div>
-                <h3>Smartphone X1</h3>
-                <p class="price">R$ 2.499,00</p>
-                <button class="buy-btn">Comprar</button>
-            </div>
+            <article class="product-card">
+                <img src="https://picsum.photos/300/300?random=1" alt="Smartphone X1" class="product-img">
+                <div class="product-info">
+                    <h3>Smartphone X1</h3>
+                    <p class="description">Tela OLED 120Hz e câmera de 108MP.</p>
+                    <p class="price">R$ 2.499,00</p>
+                    <button class="buy-btn">Adicionar ao Carrinho</button>
+                </div>
+            </article>
 
-            <div class="product-card">
-                <div class="product-image"></div>
-                <h3>Notebook Pro</h3>
-                <p class="price">R$ 4.200,00</p>
-                <button class="buy-btn">Comprar</button>
-            </div>
+            <article class="product-card">
+                <img src="https://picsum.photos/300/300?random=2" alt="Notebook Pro" class="product-img">
+                <div class="product-info">
+                    <h3>Notebook Pro</h3>
+                    <p class="description">Processador Octa-Core e 16GB RAM.</p>
+                    <p class="price">R$ 4.200,00</p>
+                    <button class="buy-btn">Adicionar ao Carrinho</button>
+                </div>
+            </article>
 
-            <div class="product-card">
-                <div class="product-image"></div>
-                <h3>Fone Bluetooth</h3>
-                <p class="price">R$ 150,00</p>
-                <button class="buy-btn">Comprar</button>
-            </div>
+            <article class="product-card">
+                <img src="https://picsum.photos/300/300?random=3" alt="Fone Bluetooth" class="product-img">
+                <div class="product-info">
+                    <h3>Fone Bluetooth</h3>
+                    <p class="description">Cancelamento de ruído ativo.</p>
+                    <p class="price">R$ 150,00</p>
+                    <button class="buy-btn">Adicionar ao Carrinho</button>
+                </div>
+            </article>
 
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 TechStore - Todos os direitos reservados.</p>
+        <p>&copy; 2026 TechStore. Criado com foco em performance.</p>
     </footer>
 
 </body>
