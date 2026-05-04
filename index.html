@@ -4,137 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3F STORE | Black & Purple Edition</title>
-    <style>
-        :root {
-            --cor-principal: #000000;
-            --cor-secundaria: #ffffff;
-            --cor-terciaria: #8a2be2;
-            --cor-cinza: #1a1a1a;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: var(--cor-principal);
-            color: var(--cor-secundaria);
-            line-height: 1.6;
-            scroll-behavior: smooth;
-        }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-
-        /* --- HEADER & NAVIGATION --- */
-        .main-header {
-            background-color: var(--cor-cinza);
-            padding: 1.5rem 0;
-            border-bottom: 2px solid var(--cor-terciaria);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo { font-size: 1.8rem; font-weight: bold; letter-spacing: 2px; }
-        .logo span { color: var(--cor-terciaria); }
-
-        .nav-links { display: flex; list-style: none; gap: 25px; }
-
-        .nav-item { display: flex; flex-direction: column; align-items: center; }
-        .category-label {
-            font-size: 0.65rem;
-            color: var(--cor-terciaria);
-            font-weight: bold;
-            text-transform: uppercase;
-            margin-bottom: 3px;
-        }
-
-        .sub-menu { display: flex; gap: 10px; }
-        .sub-menu a {
-            color: var(--cor-secundaria);
-            text-decoration: none;
-            font-size: 0.85rem;
-            transition: 0.3s;
-        }
-        .sub-menu a:hover { color: var(--cor-terciaria); }
-
-        .cart-icon { cursor: pointer; font-size: 1.2rem; }
-
-        /* --- HERO --- */
-        .hero {
-            padding: 60px 20px;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1200');
-            background-size: cover;
-            margin-bottom: 40px;
-        }
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; }
-        .hero p { color: var(--cor-terciaria); font-weight: bold; letter-spacing: 2px; }
-
-        /* --- GRID DE PRODUTOS --- */
-        .section-title {
-            margin: 60px 0 30px;
-            text-transform: uppercase;
-            border-left: 4px solid var(--cor-terciaria);
-            padding-left: 15px;
-        }
-        .section-title small { color: var(--cor-terciaria); margin-left: 10px; font-size: 0.9rem; }
-
-        .product-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-
-        .product-card {
-            background-color: var(--cor-cinza);
-            padding: 15px;
-            border-radius: 8px;
-            transition: 0.3s;
-            text-align: center;
-            border: 1px solid #222;
-        }
-        .product-card:hover { border-color: var(--cor-terciaria); transform: translateY(-5px); }
-
-        .product-img {
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            background-color: #333;
-        }
-
-        .product-info h3 { font-size: 1rem; margin-bottom: 8px; height: 40px; }
-        .price { color: var(--cor-terciaria); font-weight: bold; font-size: 1.2rem; margin-bottom: 15px; }
-
-        .buy-btn {
-            width: 100%;
-            padding: 10px;
-            background-color: var(--cor-terciaria);
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: 0.3s;
-        }
-        .buy-btn:hover { background-color: #a04ef6; }
-
-        footer {
-            margin-top: 100px;
-            padding: 40px;
-            text-align: center;
-            background-color: var(--cor-cinza);
-            border-top: 1px solid var(--cor-terciaria);
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -188,9 +58,14 @@
         <h2 class="section-title" id="camisas-lisas">Camisas <small>Lisas, Estampadas e Times</small></h2>
         <div class="product-grid">
             <article class="product-card">
-                <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?w=400" alt="Lisa" class="product-img">
-                <div class="product-info"><h3>Camisa Lisa Basic</h3><p class="price">R$ 100,00</p><button class="buy-btn" onclick="addToCart()">Comprar</button></div>
+                <img src="https://compsupply.cdn.magazord.com.br/img/2025/02/produto/4439/camada-1099.jpg" alt="Camisas Lisas" class="product-img">
+                <div class="product-info">
+                    <h3>Camisas Lisas</h3>
+                    <p class="price">R$ 100,00</p>
+                    <button class="buy-btn" onclick="addToCart()">Comprar</button>
+                </div>
             </article>
+
             <article class="product-card" id="camisas-estampadas">
                 <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?w=400" alt="Estampada" class="product-img">
                 <div class="product-info"><h3>Camisa Estampada Urban</h3><p class="price">R$ 150,00</p><button class="buy-btn" onclick="addToCart()">Comprar</button></div>
