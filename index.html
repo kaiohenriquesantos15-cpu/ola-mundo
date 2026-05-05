@@ -146,9 +146,16 @@
         <h2 class="section-title" id="calcas">Calças <small>Jeans e Moletom</small></h2>
         <div class="product-grid">
             <article class="product-card">
-                <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=400" alt="Jeans" class="product-img">
+                <div class="product-viewer">
+                    <img src="https://static.bershka.net/assets/public/1d3a/f73e/622b43bda45e/1a5aca8bc1af/05350211800-a3o/05350211800-a3o.jpg?ts=1766410201549&w=850&f=auto" id="main-img-jeans" class="main-display-img" alt="Calça Jeans">
+                    <div class="thumbnails">
+                        <img src="https://static.bershka.net/assets/public/1d3a/f73e/622b43bda45e/1a5aca8bc1af/05350211800-a3o/05350211800-a3o.jpg?ts=1766410201549&w=850&f=auto" onclick="changeImage('main-img-jeans', this.src)" alt="1">
+                        <img src="https://static.bershka.net/assets/public/a30b/f075/2bd54f37bc94/f35cc1b8037e/05350211800-a4o/05350211800-a4o.jpg?ts=1750152935081&w=850&f=auto" onclick="changeImage('main-img-jeans', this.src)" alt="2">
+                        <img src="https://static.bershka.net/assets/public/d0bf/a3a2/21414effa7c2/98a9b525913a/05350211800-b/05350211800-b.jpg?ts=1750152935082&w=850&f=auto" onclick="changeImage('main-img-jeans', this.src)" alt="3">
+                    </div>
+                </div>
                 <div class="product-info">
-                    <h3>Calça Jeans Premium</h3>
+                    <h3>Calça Jeans</h3>
                     <p class="price">R$ 200,00</p>
                     <button class="buy-btn" onclick="addToCart()">Comprar</button>
                 </div>
@@ -190,7 +197,14 @@
             </article>
 
             <article class="product-card">
-                <img src="https://images.unsplash.com/photo-1539185441755-769473a23570?w=400" alt="Shorts Esporte" class="product-img">
+                <div class="product-viewer">
+                    <img src="https://imgnike-a.akamaihd.net/768x768/024961IDA2.jpg" id="main-img-esporte" class="main-display-img" alt="Shorts Esportivo">
+                    <div class="thumbnails">
+                        <img src="https://imgnike-a.akamaihd.net/768x768/024961IDA2.jpg" onclick="changeImage('main-img-esporte', this.src)" alt="1">
+                        <img src="https://imgnike-a.akamaihd.net/768x768/024961IDA3.jpg" onclick="changeImage('main-img-esporte', this.src)" alt="2">
+                        <img src="https://imgnike-a.akamaihd.net/768x768/024961IDA6.jpg" onclick="changeImage('main-img-esporte', this.src)" alt="3">
+                    </div>
+                </div>
                 <div class="product-info">
                     <h3>Shorts de Esporte Dry Fit</h3>
                     <p class="price">R$ 60,00</p>
