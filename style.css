@@ -8,10 +8,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
-    font-family: 'Segoe UI', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--cor-principal);
     color: var(--cor-secundaria);
     line-height: 1.6;
+    scroll-behavior: smooth; /* Rolagem suave ao clicar no menu */
 }
 
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
@@ -23,36 +24,67 @@ body {
     border-bottom: 2px solid var(--cor-terciaria);
     position: sticky; top: 0; z-index: 1000;
 }
+
 .header-content { display: flex; justify-content: space-between; align-items: center; }
+
 .logo { font-size: 1.8rem; font-weight: bold; letter-spacing: 2px; }
 .logo span { color: var(--cor-terciaria); }
-.nav-links { display: flex; list-style: none; gap: 20px; }
-.nav-links a { color: white; text-decoration: none; font-size: 0.9rem; text-transform: uppercase; }
 
-/* GRID */
+.nav-links { display: flex; list-style: none; gap: 25px; }
+.nav-links a { 
+    color: white; 
+    text-decoration: none; 
+    font-size: 0.85rem; 
+    text-transform: uppercase; 
+    font-weight: 600;
+    transition: 0.3s; 
+}
+.nav-links a:hover { color: var(--cor-terciaria); }
+
+.cart-icon { font-size: 1.3rem; font-weight: bold; }
+#cart-count { background: var(--cor-terciaria); padding: 2px 8px; border-radius: 50%; font-size: 0.8rem; }
+
+/* SEÇÕES POR CATEGORIA */
+section {
+    padding: 60px 0 30px;
+    scroll-margin-top: 100px; /* Evita que o header cubra o título ao navegar */
+}
+
+.section-title { 
+    margin-bottom: 30px; 
+    text-transform: uppercase; 
+    border-left: 5px solid var(--cor-terciaria); 
+    padding-left: 15px; 
+    font-size: 1.5rem;
+}
+.section-title span { color: var(--cor-terciaria); }
+
+/* GRID DE PRODUTOS */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
-    margin-top: 40px;
 }
 
 /* CARD DO PRODUTO */
 .product-card {
     background-color: var(--cor-cinza);
-    padding: 15px;
-    border-radius: 8px;
-    border: 1px solid #333;
-    transition: 0.3s;
+    padding: 20px;
+    border-radius: 12px;
+    border: 1px solid #222;
+    transition: 0.4s ease;
 }
-.product-card:hover { border-color: var(--cor-terciaria); }
+.product-card:hover { 
+    border-color: var(--cor-terciaria); 
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
+}
 
-/* SISTEMA DE GALERIA INTERATIVA */
 .img-container {
     width: 100%;
-    height: 400px; /* Espaço amplo para a foto */
-    background-color: #050505; /* Fundo mais escuro para destacar a peça */
-    border-radius: 4px;
+    height: 420px;
+    background-color: #050505;
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,47 +94,43 @@ body {
 .main-display-img {
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain; /* GARANTE QUE A IMAGEM APAREÇA TODA SEM CORTES */
-    transition: 0.3s ease-in-out;
+    object-fit: contain;
 }
 
 .thumbnails {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin: 15px 0;
+    gap: 12px;
+    margin: 20px 0;
 }
 
 .thumbnails img {
-    width: 50px;
-    height: 65px;
-    object-fit: cover; /* Miniaturas podem ser cortadas para ficarem uniformes */
-    border-radius: 4px;
+    width: 55px;
+    height: 70px;
+    object-fit: cover;
+    border-radius: 6px;
     cursor: pointer;
     border: 2px solid transparent;
-    opacity: 0.6;
+    opacity: 0.5;
     transition: 0.3s;
 }
 
-.thumbnails img:hover {
-    opacity: 1;
-    border-color: var(--cor-terciaria);
-}
+.thumbnails img:hover { opacity: 1; border-color: var(--cor-terciaria); }
 
-/* INFOS */
-.section-title { margin: 40px 0 10px; text-transform: uppercase; }
-.section-title span { color: var(--cor-terciaria); }
-.price { color: var(--cor-terciaria); font-weight: bold; font-size: 1.3rem; margin-bottom: 15px; }
+/* INFOS DO PRODUTO */
+.product-info h3 { font-size: 1.1rem; margin-bottom: 8px; }
+.price { color: var(--cor-terciaria); font-weight: bold; font-size: 1.4rem; margin-bottom: 20px; }
 
 .buy-btn {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background-color: var(--cor-terciaria);
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
     text-transform: uppercase;
+    transition: 0.3s;
 }
-.buy-btn:hover { background-color: #a04ef6; }
+.buy-btn:hover { background-color: #a04ef6; box-shadow: 0 5px 15px rgba(160, 78, 246, 0.4); }
