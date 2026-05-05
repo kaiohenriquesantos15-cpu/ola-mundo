@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3F STORE | Black & Purple Edition</title>
+    <title>3F STORE | Professional Edition</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,25 +17,24 @@
                     <li class="dropdown">
                         <a href="#camisas">Camisas</a>
                         <ul class="submenu">
-                            <li><a href="#camisas-lisas">Lisas</a></li>
-                            <li><a href="#camisas-estampadas">Estampadas</a></li>
+                            <li><a href="#camisas-lisas">Camisas Lisas</a></li>
+                            <li><a href="#camisas-estampadas">Camisas Estampadas</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#calcas">Calças</a>
                         <ul class="submenu">
-                            <li><a href="#calcas-moletom">Moletom</a></li>
-                            <li><a href="#calcas-jeans">Jeans</a></li>
+                            <li><a href="#calcas-moletom">Calças Moletom</a></li>
+                            <li><a href="#calcas-jeans">Calças Jeans</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#shorts">Shorts</a>
                         <ul class="submenu">
-                            <li><a href="#shorts-moletom">Moletom</a></li>
-                            <li><a href="#shorts-esportivo">Esportivo</a></li>
+                            <li><a href="#shorts-moletom">Shorts Moletom</a></li>
+                            <li><a href="#shorts-esportivo">Shorts Esportivo</a></li>
                         </ul>
                     </li>
-                    <li><a href="#moletons">Moletons</a></li>
                 </ul>
             </nav>
 
@@ -55,10 +54,14 @@
                 <div class="product-grid">
                     <article class="product-card">
                         <div class="img-container">
-                            <img src="https://static.bershka.net/assets/public/cded/b9bd/42c64dc68069/627620a66bdf/07369190812-p/07369190812-p.jpg" id="img-cl-1" class="main-display-img">
+                            <img src="https://static.bershka.net/assets/public/cded/b9bd/42c64dc68069/627620a66bdf/07369190812-p/07369190812-p.jpg" id="img-lisa-1" class="main-display-img">
+                        </div>
+                        <div class="thumbnails">
+                            <img src="https://static.bershka.net/assets/public/cded/b9bd/42c64dc68069/627620a66bdf/07369190812-p/07369190812-p.jpg" onclick="changeImage('img-lisa-1', this.src)">
+                            <img src="https://static.bershka.net/assets/public/ac56/ca02/6bbe4371b37c/3822bc2a687d/07369190812-a4o/07369190812-a4o.jpg" onclick="changeImage('img-lisa-1', this.src)">
                         </div>
                         <div class="product-info">
-                            <h3>T-Shirt Basic Purple</h3>
+                            <h3>Camisa Basic Purple</h3>
                             <p class="price">R$ 89,90</p>
                             <button class="buy-btn" onclick="addToCart()">Comprar</button>
                         </div>
@@ -71,10 +74,14 @@
                 <div class="product-grid">
                     <article class="product-card">
                         <div class="img-container">
-                            <img src="https://static.bershka.net/assets/public/8dfe/1d63/e3a5403d878e/3fa9fd7635ca/01722734251-p/01722734251-p.jpg" id="img-ce-1" class="main-display-img">
+                            <img src="https://static.bershka.net/assets/public/8dfe/1d63/e3a5403d878e/3fa9fd7635ca/01722734251-p/01722734251-p.jpg" id="img-est-1" class="main-display-img">
+                        </div>
+                        <div class="thumbnails">
+                            <img src="https://static.bershka.net/assets/public/8dfe/1d63/e3a5403d878e/3fa9fd7635ca/01722734251-p/01722734251-p.jpg" onclick="changeImage('img-est-1', this.src)">
+                            <img src="https://static.bershka.net/assets/public/9d90/8e81/2d614ac994c7/6735f60b375d/01722734251-a4o/01722734251-a4o.jpg" onclick="changeImage('img-est-1', this.src)">
                         </div>
                         <div class="product-info">
-                            <h3>T-Shirt Graphic Dark</h3>
+                            <h3>Camisa Graphic Dark</h3>
                             <p class="price">R$ 120,00</p>
                             <button class="buy-btn" onclick="addToCart()">Comprar</button>
                         </div>
@@ -124,7 +131,13 @@
             <div id="shorts-moletom" class="subcategory-block">
                 <h3 class="subcategory-title"><span>//</span> Shorts Moletom</h3>
                 <div class="product-grid">
-                    <p class="coming-soon">Novidades em breve...</p>
+                    <p class="empty-msg">Novos produtos chegando em breve...</p>
+                </div>
+            </div>
+            <div id="shorts-esportivo" class="subcategory-block">
+                <h3 class="subcategory-title"><span>//</span> Shorts Esportivo</h3>
+                <div class="product-grid">
+                    <p class="empty-msg">Novos produtos chegando em breve...</p>
                 </div>
             </div>
         </section>
@@ -132,10 +145,15 @@
     </main>
 
     <script>
+        // Função para trocar imagem da galeria
         function changeImage(targetId, src) {
-            document.getElementById(targetId).src = src;
+            const mainImg = document.getElementById(targetId);
+            if(mainImg) {
+                mainImg.src = src;
+            }
         }
 
+        // Função do carrinho
         let count = 0;
         function addToCart() {
             count++;
