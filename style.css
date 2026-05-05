@@ -25,7 +25,7 @@ body {
     padding: 0 20px; 
 }
 
-/* --- HEADER & NAVIGATION --- */
+/* --- HEADER --- */
 .main-header {
     background-color: var(--cor-cinza);
     padding: 1.5rem 0;
@@ -47,9 +47,7 @@ body {
     letter-spacing: 2px; 
 }
 
-.logo span { 
-    color: var(--cor-terciaria); 
-}
+.logo span { color: var(--cor-terciaria); }
 
 .nav-links { 
     display: flex; 
@@ -71,10 +69,7 @@ body {
     margin-bottom: 3px;
 }
 
-.sub-menu { 
-    display: flex; 
-    gap: 10px; 
-}
+.sub-menu { display: flex; gap: 10px; }
 
 .sub-menu a {
     color: var(--cor-secundaria);
@@ -83,37 +78,28 @@ body {
     transition: 0.3s;
 }
 
-.sub-menu a:hover { 
-    color: var(--cor-terciaria); 
-}
+.sub-menu a:hover { color: var(--cor-terciaria); }
 
-.cart-icon { 
-    cursor: pointer; 
-    font-size: 1.2rem; 
-}
+.cart-icon { cursor: pointer; font-size: 1.2rem; }
 
 /* --- HERO --- */
 .hero {
     padding: 80px 20px;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.8), rgba(138, 43, 226, 0.2)), url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1200');
+    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1200');
     background-size: cover;
-    background-position: center;
     margin-bottom: 40px;
 }
 
-.hero h1 { 
-    font-size: 3.5rem; 
-    margin-bottom: 10px; 
-}
+.hero h1 { font-size: 3rem; margin-bottom: 10px; }
 
 .hero p { 
     color: var(--cor-terciaria); 
     font-weight: bold; 
-    letter-spacing: 4px; 
+    letter-spacing: 2px; 
 }
 
-/* --- GRID DE PRODUTOS --- */
+/* --- GRID & CARDS --- */
 .section-title {
     margin: 60px 0 30px;
     text-transform: uppercase;
@@ -130,7 +116,7 @@ body {
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    gap: 25px;
 }
 
 .product-card {
@@ -144,8 +130,7 @@ body {
 
 .product-card:hover { 
     border-color: var(--cor-terciaria); 
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
+    transform: translateY(-5px); 
 }
 
 .product-img {
@@ -154,25 +139,40 @@ body {
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 15px;
+}
+
+/* GALERIA ESPECÍFICA PARA CAMISAS DE TIME */
+.product-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+    margin-bottom: 15px;
+    height: 280px;
+}
+
+.product-gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 3px;
     background-color: #333;
 }
 
-.product-info h3 { 
-    font-size: 1.1rem; 
-    margin-bottom: 8px; 
-    height: auto; 
+.product-gallery img:first-child {
+    grid-column: span 2;
+    grid-row: span 2;
 }
 
 .price { 
     color: var(--cor-terciaria); 
     font-weight: bold; 
-    font-size: 1.3rem; 
+    font-size: 1.2rem; 
     margin-bottom: 15px; 
 }
 
 .buy-btn {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     background-color: var(--cor-terciaria);
     color: white;
     border: none;
@@ -183,14 +183,12 @@ body {
     transition: 0.3s;
 }
 
-.buy-btn:hover { 
-    background-color: #a04ef6; 
-}
+.buy-btn:hover { background-color: #a04ef6; }
 
 footer {
     margin-top: 100px;
-    padding: 60px;
+    padding: 40px;
     text-align: center;
     background-color: var(--cor-cinza);
-    border-top: 2px solid var(--cor-terciaria);
+    border-top: 1px solid var(--cor-terciaria);
 }
