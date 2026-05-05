@@ -94,22 +94,23 @@ body {
 
 /* --- HERO --- */
 .hero {
-    padding: 60px 20px;
+    padding: 80px 20px;
     text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1200');
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(138, 43, 226, 0.2)), url('https://images.unsplash.com/photo-1558769132-cb1aea458c5e?w=1200');
     background-size: cover;
+    background-position: center;
     margin-bottom: 40px;
 }
 
 .hero h1 { 
-    font-size: 3rem; 
+    font-size: 3.5rem; 
     margin-bottom: 10px; 
 }
 
 .hero p { 
     color: var(--cor-terciaria); 
     font-weight: bold; 
-    letter-spacing: 2px; 
+    letter-spacing: 4px; 
 }
 
 /* --- GRID DE PRODUTOS --- */
@@ -128,8 +129,8 @@ body {
 
 .product-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
 }
 
 .product-card {
@@ -143,12 +144,13 @@ body {
 
 .product-card:hover { 
     border-color: var(--cor-terciaria); 
-    transform: translateY(-5px); 
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(138, 43, 226, 0.2);
 }
 
 .product-img {
     width: 100%;
-    height: 250px;
+    height: 280px;
     object-fit: cover;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -156,21 +158,21 @@ body {
 }
 
 .product-info h3 { 
-    font-size: 1rem; 
+    font-size: 1.1rem; 
     margin-bottom: 8px; 
-    height: 40px; 
+    height: auto; 
 }
 
 .price { 
     color: var(--cor-terciaria); 
     font-weight: bold; 
-    font-size: 1.2rem; 
+    font-size: 1.3rem; 
     margin-bottom: 15px; 
 }
 
 .buy-btn {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     background-color: var(--cor-terciaria);
     color: white;
     border: none;
@@ -187,8 +189,8 @@ body {
 
 footer {
     margin-top: 100px;
-    padding: 40px;
+    padding: 60px;
     text-align: center;
     background-color: var(--cor-cinza);
-    border-top: 1px solid var(--cor-terciaria);
+    border-top: 2px solid var(--cor-terciaria);
 }
