@@ -55,18 +55,14 @@ body {
     gap: 25px; 
 }
 
-.nav-item { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-}
-
 .category-label {
     font-size: 0.65rem;
     color: var(--cor-terciaria);
     font-weight: bold;
     text-transform: uppercase;
     margin-bottom: 3px;
+    display: block;
+    text-align: center;
 }
 
 .sub-menu { display: flex; gap: 10px; }
@@ -80,8 +76,6 @@ body {
 
 .sub-menu a:hover { color: var(--cor-terciaria); }
 
-.cart-icon { cursor: pointer; font-size: 1.2rem; }
-
 /* --- HERO --- */
 .hero {
     padding: 80px 20px;
@@ -92,27 +86,9 @@ body {
 }
 
 .hero h1 { font-size: 3rem; margin-bottom: 10px; }
+.hero p { color: var(--cor-terciaria); font-weight: bold; letter-spacing: 2px; }
 
-.hero p { 
-    color: var(--cor-terciaria); 
-    font-weight: bold; 
-    letter-spacing: 2px; 
-}
-
-/* --- GRID & CARDS --- */
-.section-title {
-    margin: 60px 0 30px;
-    text-transform: uppercase;
-    border-left: 4px solid var(--cor-terciaria);
-    padding-left: 15px;
-}
-
-.section-title small { 
-    color: var(--cor-terciaria); 
-    margin-left: 10px; 
-    font-size: 0.9rem; 
-}
-
+/* --- PRODUTOS --- */
 .product-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -124,14 +100,11 @@ body {
     padding: 15px;
     border-radius: 8px;
     transition: 0.3s;
-    text-align: center;
     border: 1px solid #222;
+    text-align: center;
 }
 
-.product-card:hover { 
-    border-color: var(--cor-terciaria); 
-    transform: translateY(-5px); 
-}
+.product-card:hover { border-color: var(--cor-terciaria); transform: translateY(-5px); }
 
 .product-img {
     width: 100%;
@@ -141,7 +114,7 @@ body {
     margin-bottom: 15px;
 }
 
-/* --- GALERIA PROFISSIONAL (TIME) --- */
+/* --- ESTILO DA GALERIA --- */
 .product-viewer {
     display: flex;
     flex-direction: column;
@@ -161,7 +134,6 @@ body {
     display: flex;
     justify-content: center;
     gap: 5px;
-    overflow-x: auto;
 }
 
 .thumbnails img {
@@ -170,8 +142,8 @@ body {
     object-fit: cover;
     border-radius: 4px;
     cursor: pointer;
-    border: 2px solid transparent;
     opacity: 0.6;
+    border: 2px solid transparent;
     transition: 0.2s;
 }
 
@@ -180,13 +152,15 @@ body {
     border-color: var(--cor-terciaria);
 }
 
-/* --- PREÇO E BOTÃO --- */
-.price { 
-    color: var(--cor-terciaria); 
-    font-weight: bold; 
-    font-size: 1.2rem; 
-    margin-bottom: 15px; 
+/* --- BOTÕES E PREÇOS --- */
+.section-title {
+    margin: 60px 0 30px;
+    text-transform: uppercase;
+    border-left: 4px solid var(--cor-terciaria);
+    padding-left: 15px;
 }
+
+.price { color: var(--cor-terciaria); font-weight: bold; font-size: 1.2rem; margin-bottom: 15px; }
 
 .buy-btn {
     width: 100%;
@@ -197,7 +171,6 @@ body {
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
-    text-transform: uppercase;
     transition: 0.3s;
 }
 
