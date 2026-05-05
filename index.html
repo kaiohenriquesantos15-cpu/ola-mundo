@@ -101,6 +101,34 @@
             </article>
         </div>
 
+        <h2 class="section-title" id="moletons-lisos">Moletons <small>Lisos e Estampados</small></h2>
+        <div class="product-grid">
+            <article class="product-card">
+                <img src="https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=400" alt="Moletom Liso" class="product-img">
+                <div class="product-info">
+                    <h3>Moletom Canguru Liso</h3>
+                    <p class="price">R$ 220,00</p>
+                    <button class="buy-btn" onclick="addToCart()">Comprar</button>
+                </div>
+            </article>
+
+            <article class="product-card" id="moletons-estampados">
+                <div class="product-viewer">
+                    <img src="https://static.bershka.net/assets/public/376b/2ad7/a4cd47f28c06/04edb0bc7b03/01275732802-p/01275732802-p.jpg?ts=1771933788734&w=850&f=auto" id="main-img-moletom-est" class="main-display-img" alt="Moletom Estampado">
+                    <div class="thumbnails">
+                        <img src="https://static.bershka.net/assets/public/376b/2ad7/a4cd47f28c06/04edb0bc7b03/01275732802-p/01275732802-p.jpg?ts=1771933788734&w=850&f=auto" onclick="changeImage('main-img-moletom-est', this.src)" alt="Foto 1">
+                        <img src="https://static.bershka.net/assets/public/c8b8/4474/6611437cad2d/46f9a5da0f4f/01275732802-a4o/01275732802-a4o.jpg?ts=1768905266781&w=850&f=auto" onclick="changeImage('main-img-moletom-est', this.src)" alt="Foto 2">
+                        <img src="https://static.bershka.net/assets/public/319c/2ef2/d24d4c7fb4b4/6bc11c63980a/01275732802-b/01275732802-b.jpg?ts=1768905266562&w=850&f=auto" onclick="changeImage('main-img-moletom-est', this.src)" alt="Foto 3">
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Moletom Street Art</h3>
+                    <p class="price">R$ 250,00</p>
+                    <button class="buy-btn" onclick="addToCart()">Comprar</button>
+                </div>
+            </article>
+        </div>
+
         <h2 class="section-title" id="calcas">Calças <small>Jeans e Moletom</small></h2>
         <div class="product-grid">
             <article class="product-card">
@@ -164,7 +192,6 @@
     </footer>
 
     <script>
-        // Função universal para troca de imagens por ID do container principal
         function changeImage(targetId, src) {
             document.getElementById(targetId).src = src;
         }
