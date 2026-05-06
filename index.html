@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3F STORE | High Streetwear</title>
+    <title>3F STORE | Professional Edition</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
@@ -12,7 +12,6 @@
     <header class="main-header">
         <div class="container header-content">
             <div class="logo">3F <span>STORE</span></div>
-            
             <nav class="main-nav">
                 <ul class="nav-links">
                     <li class="dropdown">
@@ -26,25 +25,16 @@
                         <a href="#moletons">Moletons</a>
                         <ul class="submenu">
                             <li><a href="#moletons-hoodie">Hoodies</a></li>
-                            <li><a href="#moletons-crewneck">Crewneck</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#calcas">Calças</a>
                         <ul class="submenu">
-                            <li><a href="#calcas-moletom">Moletom</a></li>
                             <li><a href="#calcas-jeans">Jeans</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#shorts">Shorts</a>
-                        <ul class="submenu">
-                            <li><a href="#shorts-esportivo">Esportivo</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
-
             <div class="header-actions">
                 <div class="cart-icon">🛒 <span id="cart-count">0</span></div>
             </div>
@@ -61,15 +51,37 @@
                 <div class="product-grid">
                     <article class="product-card">
                         <div class="img-container">
-                            <img src="https://static.bershka.net/assets/public/cded/b9bd/42c64dc68069/627620a66bdf/07369190812-p/07369190812-p.jpg" id="img-lisa-1" class="main-display-img">
+                            <img src="https://static.bershka.net/assets/public/327f/d465/ba6544c68d17/5c8279f7a662/00069154250-p/00069154250-p.jpg?ts=1764666002326&w=850" id="img-lisa-white" class="main-display-img">
                         </div>
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/cded/b9bd/42c64dc68069/627620a66bdf/07369190812-p/07369190812-p.jpg" onclick="changeImage('img-lisa-1', this.src)">
-                            <img src="https://static.bershka.net/assets/public/ac56/ca02/6bbe4371b37c/3822bc2a687d/07369190812-a4o/07369190812-a4o.jpg" onclick="changeImage('img-lisa-1', this.src)">
+                            <img src="https://static.bershka.net/assets/public/327f/d465/ba6544c68d17/5c8279f7a662/00069154250-p/00069154250-p.jpg?ts=1764666002326&w=850" onclick="changeImage('img-lisa-white', this.src)">
+                            <img src="https://static.bershka.net/assets/public/0e3c/7776/fdbf4105b127/0155aa573671/00069154250-a4o/00069154250-a4o.jpg?ts=1777561199462&w=850" onclick="changeImage('img-lisa-white', this.src)">
+                            <img src="https://static.bershka.net/assets/public/4882/0e2f/ea4b48f8a728/e6f06e51e170/00069154250-b/00069154250-b.jpg?ts=1777561199699&w=850" onclick="changeImage('img-lisa-white', this.src)">
                         </div>
                         <div class="product-info">
-                            <h3>Camisa Basic Purple</h3>
-                            <p class="price">R$ 89,90</p>
+                            <h3>Camisa Basic White</h3>
+                            <p class="price">R$ 79,90</p>
+                            <button class="buy-btn" onclick="addToCart()">Comprar</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <div id="camisas-estampadas" class="subcategory-block">
+                <h3 class="subcategory-title"><span>//</span> Camisas Estampadas</h3>
+                <div class="product-grid">
+                    <article class="product-card">
+                        <div class="img-container">
+                            <img src="https://static.bershka.net/assets/public/9abb/7864/21524edbb7f6/b1fb45ffe930/01493663800-p/01493663800-p.jpg?ts=1771939362138&w=850" id="img-est-new" class="main-display-img">
+                        </div>
+                        <div class="thumbnails">
+                            <img src="https://static.bershka.net/assets/public/9abb/7864/21524edbb7f6/b1fb45ffe930/01493663800-p/01493663800-p.jpg?ts=1771939362138&w=850" onclick="changeImage('img-est-new', this.src)">
+                            <img src="https://static.bershka.net/assets/public/1fc3/50b1/6e924307b425/ae49369e5fad/01493663800-a4o/01493663800-a4o.jpg?ts=1770022802604&w=850" onclick="changeImage('img-est-new', this.src)">
+                            <img src="https://static.bershka.net/assets/public/92bd/511b/b3744b19a30c/6db1a812aaa9/01493663800-b/01493663800-b.jpg?ts=1770022802446&w=850" onclick="changeImage('img-est-new', this.src)">
+                        </div>
+                        <div class="product-info">
+                            <h3>Camisa Graphic Street</h3>
+                            <p class="price">R$ 119,90</p>
                             <button class="buy-btn" onclick="addToCart()">Comprar</button>
                         </div>
                     </article>
@@ -80,42 +92,19 @@
         <section id="moletons">
             <h2 class="category-title">Moletons</h2>
             <div id="moletons-hoodie" class="subcategory-block">
-                <h3 class="subcategory-title"><span>//</span> Hoodies</h3>
+                <h3 class="subcategory-title"><span>//</span> Hoodies & Sweats</h3>
                 <div class="product-grid">
                     <article class="product-card">
                         <div class="img-container">
-                            <img src="https://static.bershka.net/assets/public/6910/f586/f4a84e49980d/18e5b02660ae/07134445800-p/07134445800-p.jpg" id="img-hoodie-1" class="main-display-img">
+                            <img src="https://static.bershka.net/assets/public/cded/b9bd/42c64dc68069/627620a66bdf/07369190812-p/07369190812-p.jpg" id="img-moletom-purple" class="main-display-img">
                         </div>
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/6910/f586/f4a84e49980d/18e5b02660ae/07134445800-p/07134445800-p.jpg" onclick="changeImage('img-hoodie-1', this.src)">
-                            <img src="https://static.bershka.net/assets/public/01ec/3602/a92f447781f3/3103ca09689f/07134445800-a2o/07134445800-a2o.jpg" onclick="changeImage('img-hoodie-1', this.src)">
+                            <img src="https://static.bershka.net/assets/public/cded/b9bd/42c64dc68069/627620a66bdf/07369190812-p/07369190812-p.jpg" onclick="changeImage('img-moletom-purple', this.src)">
+                            <img src="https://static.bershka.net/assets/public/ac56/ca02/6bbe4371b37c/3822bc2a687d/07369190812-a4o/07369190812-a4o.jpg" onclick="changeImage('img-moletom-purple', this.src)">
                         </div>
                         <div class="product-info">
-                            <h3>Hoodie Boxy Fit Black</h3>
-                            <p class="price">R$ 249,90</p>
-                            <button class="buy-btn" onclick="addToCart()">Comprar</button>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section id="calcas">
-            <h2 class="category-title">Calças</h2>
-            <div id="calcas-jeans" class="subcategory-block">
-                <h3 class="subcategory-title"><span>//</span> Jeans & Cargo</h3>
-                <div class="product-grid">
-                    <article class="product-card">
-                        <div class="img-container">
-                            <img src="https://static.bershka.net/assets/public/1d3a/f73e/622b43bda45e/1a5aca8bc1af/05350211800-a3o/05350211800-a3o.jpg" id="img-jeans-1" class="main-display-img">
-                        </div>
-                        <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/1d3a/f73e/622b43bda45e/1a5aca8bc1af/05350211800-a3o/05350211800-a3o.jpg" onclick="changeImage('img-jeans-1', this.src)">
-                            <img src="https://static.bershka.net/assets/public/9e8b/8549/50634628a52e/d06584c68832/05350211800-p/05350211800-p.jpg" onclick="changeImage('img-jeans-1', this.src)">
-                        </div>
-                        <div class="product-info">
-                            <h3>Jeans Baggy Multi-pocket</h3>
-                            <p class="price">R$ 199,90</p>
+                            <h3>Moletom Oversized Purple</h3>
+                            <p class="price">R$ 189,90</p>
                             <button class="buy-btn" onclick="addToCart()">Comprar</button>
                         </div>
                     </article>
