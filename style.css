@@ -82,7 +82,7 @@ section { padding-top: 20px; }
 .thumbnails img:hover { opacity: 1; border-color: var(--primary); transform: scale(1.05); }
 
 /* TEXTOS E BOTÃO */
-.product-info h3 { font-size: 1.05rem; margin-bottom: 8px; font-weight: 600; }
+.product-info h3 { font-size: 1.05rem; margin-bottom: 8px; font-weight: 600; text-transform: capitalize; }
 .price { color: var(--text-white); font-size: 1.5rem; font-weight: 800; margin: 10px 0; }
 .buy-btn { 
     width: 100%; padding: 14px; background: var(--primary); color: white; 
