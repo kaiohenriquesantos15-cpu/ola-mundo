@@ -9,6 +9,35 @@
 </head>
 <body>
 
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content">
+            <span class="close-modal" onclick="toggleModal()">&times;</span>
+            
+            <div id="login-form">
+                <h2>Entrar na 3F STORE</h2>
+                <input type="email" id="login-email" placeholder="Seu e-mail">
+                <input type="password" id="login-pass" placeholder="Sua senha">
+                <button class="buy-btn" onclick="handleAuth('login')">Entrar</button>
+                <p>Não tem conta? <a href="#" onclick="switchForm('register')">Cadastre-se</a></p>
+            </div>
+
+            <div id="register-form" style="display: none;">
+                <h2>Criar Conta</h2>
+                <input type="text" id="reg-name" placeholder="Nome completo">
+                <input type="email" id="reg-email" placeholder="E-mail">
+                <input type="password" id="reg-pass" placeholder="Senha">
+                
+                <h3 class="address-title">Endereço de Entrega</h3>
+                <input type="text" id="reg-cep" placeholder="CEP">
+                <input type="text" id="reg-street" placeholder="Rua e Número">
+                <input type="text" id="reg-city" placeholder="Cidade/Estado">
+                
+                <button class="buy-btn" onclick="handleAuth('register')">Finalizar Cadastro</button>
+                <p>Já tem conta? <a href="#" onclick="switchForm('login')">Fazer Login</a></p>
+            </div>
+        </div>
+    </div>
+
     <header class="main-header">
         <div class="container header-content">
             <div class="logo">3F <span>STORE</span></div>
@@ -19,14 +48,6 @@
                         <a href="#camisas">Camisas</a>
                         <ul class="submenu">
                             <li><a href="#camisas-lisas">Camisas Lisas</a></li>
-                            <li><a href="#camisas-estampadas">Camisas Estampadas</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a href="#calcas">Calças</a>
-                        <ul class="submenu">
-                            <li><a href="#calcas-moletom">Calças Moletom</a></li>
-                            <li><a href="#calcas-jeans">Calças Jeans</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
@@ -47,72 +68,38 @@
             </nav>
 
             <div class="header-actions">
-                <div class="cart-icon">🛒 <span id="cart-count">0</span></div>
+                <div class="cart-icon" onclick="toggleModal()">🛒 <span id="cart-count">0</span></div>
             </div>
         </div>
     </header>
 
     <main class="container">
         
-        <section id="camisas">
-            <h2 class="category-title">Camisas</h2>
-            <div id="camisas-lisas" class="subcategory-block">
-                <h3 class="subcategory-title"><span>//</span> Camisas Lisas</h3>
-                <div class="product-grid">
-                    <article class="product-card">
-                        <div class="img-container">
-                            <img src="https://static.bershka.net/assets/public/327f/d465/ba6544c68d17/5c8279f7a662/00069154250-p/00069154250-p.jpg?ts=1764666002326&w=850" id="img-lisa-white" class="main-display-img">
-                        </div>
-                        <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/327f/d465/ba6544c68d17/5c8279f7a662/00069154250-p/00069154250-p.jpg?ts=1764666002326&w=850" onmouseover="changeImage('img-lisa-white', this.src)">
-                            <img src="https://static.bershka.net/assets/public/0e3c/7776/fdbf4105b127/0155aa573671/00069154250-a4o/00069154250-a4o.jpg?ts=1777561199462&w=850" onmouseover="changeImage('img-lisa-white', this.src)">
-                        </div>
-                        <div class="product-info">
-                            <h3>Camisa branca</h3>
-                            <p class="price">R$ 89,90</p>
-                            <button class="buy-btn" onclick="addToCart()">Comprar</button>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
         <section id="moletons">
             <h2 class="category-title">Moletons</h2>
-            <div id="moletons-lisos" class="subcategory-block">
-                <h3 class="subcategory-title"><span>//</span> Moletons Lisos</h3>
-                <div class="product-grid">
-                    <article class="product-card">
-                        <div class="img-container">
-                            <img src="https://static.bershka.net/assets/public/cded/b9bd/42c64dc68069/627620a66bdf/07369190812-p/07369190812-p.jpg" id="img-moletom-p-basic" class="main-display-img">
-                        </div>
-                        <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/cded/b9bd/42c64dc68069/627620a66bdf/07369190812-p/07369190812-p.jpg" onmouseover="changeImage('img-moletom-p-basic', this.src)">
-                        </div>
-                        <div class="product-info">
-                            <h3>Moletom liso</h3>
-                            <p class="price">R$ 150,00</p>
-                            <button class="buy-btn" onclick="addToCart()">Comprar</button>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
             <div id="moletons-estampados" class="subcategory-block">
-                <h3 class="subcategory-title"><span>//</span> Moletom estampado</h3>
+                <h3 class="subcategory-title"><span>//</span> Moletom Estampado</h3>
                 <div class="product-grid">
                     <article class="product-card">
                         <div class="img-container">
-                            <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg" id="img-moletom-est-new" class="main-display-img">
+                            <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg?ts=1772115273610&w=850&f=auto" id="img-mol-est" class="main-display-img">
                         </div>
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg" onmouseover="changeImage('img-moletom-est-new', this.src)">
-                            <img src="https://static.bershka.net/assets/public/7cfd/5b3f/db60450f9324/c4743a1ff70d/01259190810-a4o/01259190810-a4o.jpg" onmouseover="changeImage('img-moletom-est-new', this.src)">
+                            <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg?ts=1772115273610&w=850&f=auto" onmouseover="changeImage('img-mol-est', this.src)">
+                            <img src="https://static.bershka.net/assets/public/7cfd/5b3f/db60450f9324/c4743a1ff70d/01259190810-a4o/01259190810-a4o.jpg?ts=1772123507351&w=850&f=auto" onmouseover="changeImage('img-mol-est', this.src)">
                         </div>
                         <div class="product-info">
-                            <h3>Moletom estampado</h3>
+                            <h3>Moletom Estampado</h3>
                             <p class="price">R$ 200,00</p>
-                            <button class="buy-btn" onclick="addToCart()">Comprar</button>
+                            <div class="size-selector">
+                                <p>Tamanho:</p>
+                                <div class="size-options">
+                                    <button class="size-btn" onclick="selectSize(this)">P</button>
+                                    <button class="size-btn" onclick="selectSize(this)">M</button>
+                                    <button class="size-btn" onclick="selectSize(this)">G</button>
+                                </div>
+                            </div>
+                            <button class="buy-btn" onclick="addToCart('Moletom Estampado')">Comprar</button>
                         </div>
                     </article>
                 </div>
@@ -127,17 +114,24 @@
                 <div class="product-grid">
                     <article class="product-card">
                         <div class="img-container">
-                            <img src="https://static.bershka.net/assets/public/4844/478d/6fb94cbb85cc/e4995b2a4840/01306732401-p/01306732401-p.jpg?ts=1771512555968&w=850&f=auto" id="img-bermuda-moletom" class="main-display-img">
+                            <img src="https://static.bershka.net/assets/public/4844/478d/6fb94cbb85cc/e4995b2a4840/01306732401-p/01306732401-p.jpg?ts=1771512555968&w=850&f=auto" id="img-bermuda-mol" class="main-display-img">
                         </div>
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/4844/478d/6fb94cbb85cc/e4995b2a4840/01306732401-p/01306732401-p.jpg?ts=1771512555968&w=850&f=auto" onmouseover="changeImage('img-bermuda-moletom', this.src)">
-                            <img src="https://static.bershka.net/assets/public/586b/96ba/db12457499f8/e6bf3aa67a7c/01306498401-a4o/01306498401-a4o.jpg?ts=1770882990134&w=850&f=auto" onmouseover="changeImage('img-bermuda-moletom', this.src)">
-                            <img src="https://static.bershka.net/assets/public/4fb2/9470/07b245c18380/7c4e231f387b/01306498401-b/01306498401-b.jpg?ts=1770882995237&w=850&f=auto" onmouseover="changeImage('img-bermuda-moletom', this.src)">
+                            <img src="https://static.bershka.net/assets/public/4844/478d/6fb94cbb85cc/e4995b2a4840/01306732401-p/01306732401-p.jpg?ts=1771512555968&w=850&f=auto" onmouseover="changeImage('img-bermuda-mol', this.src)">
+                            <img src="https://static.bershka.net/assets/public/586b/96ba/db12457499f8/e6bf3aa67a7c/01306498401-a4o/01306498401-a4o.jpg?ts=1770882990134&w=850&f=auto" onmouseover="changeImage('img-bermuda-mol', this.src)">
                         </div>
                         <div class="product-info">
-                            <h3>Bermuda moletom</h3>
+                            <h3>Bermuda Moletom</h3>
                             <p class="price">R$ 110,00</p>
-                            <button class="buy-btn" onclick="addToCart()">Comprar</button>
+                            <div class="size-selector">
+                                <p>Tamanho:</p>
+                                <div class="size-options">
+                                    <button class="size-btn" onclick="selectSize(this)">P</button>
+                                    <button class="size-btn" onclick="selectSize(this)">M</button>
+                                    <button class="size-btn" onclick="selectSize(this)">G</button>
+                                </div>
+                            </div>
+                            <button class="buy-btn" onclick="addToCart('Bermuda Moletom')">Comprar</button>
                         </div>
                     </article>
                 </div>
@@ -153,32 +147,79 @@
                         <div class="thumbnails">
                             <img src="https://static.bershka.net/assets/public/fd59/fbae/0f5d4ddca992/4586edda050a/01196534800-p/01196534800-p.jpg?ts=1772721564101&w=850&f=auto" onmouseover="changeImage('img-bermuda-jeans', this.src)">
                             <img src="https://static.bershka.net/assets/public/553b/7b69/0f19496488ad/6dfd89ff8d4d/01196534800-a4o/01196534800-a4o.jpg?ts=1771347701514&w=850&f=auto" onmouseover="changeImage('img-bermuda-jeans', this.src)">
-                            <img src="https://static.bershka.net/assets/public/c922/08fc/bb864b4e8f58/60942d92c8e1/01196534800-b/01196534800-b.jpg?ts=1771347701260&w=850&f=auto" onmouseover="changeImage('img-bermuda-jeans', this.src)">
                         </div>
                         <div class="product-info">
-                            <h3>Bermuda jeans baggy</h3>
+                            <h3>Bermuda Jeans Baggy</h3>
                             <p class="price">R$ 140,00</p>
-                            <button class="buy-btn" onclick="addToCart()">Comprar</button>
+                            <div class="size-selector">
+                                <p>Tamanho:</p>
+                                <div class="size-options">
+                                    <button class="size-btn" onclick="selectSize(this)">38</button>
+                                    <button class="size-btn" onclick="selectSize(this)">40</button>
+                                    <button class="size-btn" onclick="selectSize(this)">42</button>
+                                </div>
+                            </div>
+                            <button class="buy-btn" onclick="addToCart('Bermuda Jeans Baggy')">Comprar</button>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
-
     </main>
 
     <script>
+        let count = 0;
+        let userData = null;
+
         function changeImage(targetId, src) {
             const mainImg = document.getElementById(targetId);
-            if(mainImg) {
-                mainImg.src = src;
-            }
+            if(mainImg) mainImg.src = src;
         }
 
-        let count = 0;
-        function addToCart() {
+        function selectSize(btn) {
+            const parent = btn.parentElement;
+            parent.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+
+        function toggleModal() {
+            const modal = document.getElementById('login-modal');
+            modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
+        }
+
+        function switchForm(type) {
+            document.getElementById('login-form').style.display = (type === 'login') ? 'block' : 'none';
+            document.getElementById('register-form').style.display = (type === 'register') ? 'block' : 'none';
+        }
+
+        function handleAuth(type) {
+            if (type === 'register') {
+                const name = document.getElementById('reg-name').value;
+                const email = document.getElementById('reg-email').value;
+                const street = document.getElementById('reg-street').value;
+                if (!name || !email || !street) { alert("Preencha todos os campos do endereço!"); return; }
+                userData = { name, email, street };
+                alert(`Cadastro concluído!\nBem-vindo(a), ${name}`);
+            } else {
+                if (!userData) { alert("Nenhuma conta encontrada. Cadastre-se!"); return; }
+                alert("Login realizado!");
+            }
+            toggleModal();
+        }
+
+        function addToCart(productName) {
+            if (!userData) {
+                alert("Acesse sua conta para realizar a compra!");
+                toggleModal();
+                return;
+            }
+            const card = event.target.closest('.product-card');
+            const size = card.querySelector('.size-btn.active');
+            if (!size) { alert("Selecione um tamanho!"); return; }
+            
             count++;
             document.getElementById('cart-count').innerText = count;
+            alert(`✅ Sucesso!\n\nProduto: ${productName}\nTamanho: ${size.innerText}\n\nO pedido será enviado para:\n${userData.street}`);
         }
     </script>
 </body>
