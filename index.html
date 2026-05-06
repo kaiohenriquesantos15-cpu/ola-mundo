@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3F STORE | Premium Edition</title>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <title>3F STORE | High Streetwear</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header class="main-header">
         <div class="container header-content">
-            <a href="#" class="logo">3F <span>STORE</span></a>
+            <div class="logo">3F <span>STORE</span></div>
             
             <nav class="main-nav">
                 <ul class="nav-links">
@@ -23,26 +23,30 @@
                         </ul>
                     </li>
                     <li class="dropdown">
+                        <a href="#moletons">Moletons</a>
+                        <ul class="submenu">
+                            <li><a href="#moletons-hoodie">Hoodies</a></li>
+                            <li><a href="#moletons-crewneck">Crewneck</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
                         <a href="#calcas">Calças</a>
                         <ul class="submenu">
-                            <li><a href="#calcas-moletom">Calças Moletom</a></li>
-                            <li><a href="#calcas-jeans">Calças Jeans</a></li>
+                            <li><a href="#calcas-moletom">Moletom</a></li>
+                            <li><a href="#calcas-jeans">Jeans</a></li>
                         </ul>
                     </li>
                     <li class="dropdown">
                         <a href="#shorts">Shorts</a>
                         <ul class="submenu">
-                            <li><a href="#shorts-moletom">Shorts Moletom</a></li>
-                            <li><a href="#shorts-esportivo">Shorts Esportivo</a></li>
+                            <li><a href="#shorts-esportivo">Esportivo</a></li>
                         </ul>
                     </li>
                 </ul>
             </nav>
 
             <div class="header-actions">
-                <div class="cart-wrapper">
-                    🛒 <span id="cart-count">0</span>
-                </div>
+                <div class="cart-icon">🛒 <span id="cart-count">0</span></div>
             </div>
         </div>
     </header>
@@ -53,46 +57,43 @@
             <h2 class="category-title">Camisas</h2>
             
             <div id="camisas-lisas" class="subcategory-block">
-                <h3 class="subcategory-label"><span>//</span> Camisas Lisas</h3>
+                <h3 class="subcategory-title"><span>//</span> Camisas Lisas</h3>
                 <div class="product-grid">
                     <article class="product-card">
                         <div class="img-container">
                             <img src="https://static.bershka.net/assets/public/cded/b9bd/42c64dc68069/627620a66bdf/07369190812-p/07369190812-p.jpg" id="img-lisa-1" class="main-display-img">
                         </div>
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/cded/b9bd/42c64dc68069/627620a66bdf/07369190812-p/07369190812-p.jpg" class="active" onclick="changeImage('img-lisa-1', this)">
-                            <img src="https://static.bershka.net/assets/public/ac56/ca02/6bbe4371b37c/3822bc2a687d/07369190812-a4o/07369190812-a4o.jpg" onclick="changeImage('img-lisa-1', this)">
+                            <img src="https://static.bershka.net/assets/public/cded/b9bd/42c64dc68069/627620a66bdf/07369190812-p/07369190812-p.jpg" onclick="changeImage('img-lisa-1', this.src)">
+                            <img src="https://static.bershka.net/assets/public/ac56/ca02/6bbe4371b37c/3822bc2a687d/07369190812-a4o/07369190812-a4o.jpg" onclick="changeImage('img-lisa-1', this.src)">
                         </div>
                         <div class="product-info">
-                            <span class="brand-tag">Premium Cotton</span>
                             <h3>Camisa Basic Purple</h3>
-                            <div class="price-row">
-                                <p class="price">R$ 89,90</p>
-                                <button class="buy-btn" onclick="addToCart()">Comprar</button>
-                            </div>
+                            <p class="price">R$ 89,90</p>
+                            <button class="buy-btn" onclick="addToCart()">Comprar</button>
                         </div>
                     </article>
                 </div>
             </div>
+        </section>
 
-            <div id="camisas-estampadas" class="subcategory-block">
-                <h3 class="subcategory-label"><span>//</span> Camisas Estampadas</h3>
+        <section id="moletons">
+            <h2 class="category-title">Moletons</h2>
+            <div id="moletons-hoodie" class="subcategory-block">
+                <h3 class="subcategory-title"><span>//</span> Hoodies</h3>
                 <div class="product-grid">
                     <article class="product-card">
                         <div class="img-container">
-                            <img src="https://static.bershka.net/assets/public/8dfe/1d63/e3a5403d878e/3fa9fd7635ca/01722734251-p/01722734251-p.jpg" id="img-est-1" class="main-display-img">
+                            <img src="https://static.bershka.net/assets/public/6910/f586/f4a84e49980d/18e5b02660ae/07134445800-p/07134445800-p.jpg" id="img-hoodie-1" class="main-display-img">
                         </div>
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/8dfe/1d63/e3a5403d878e/3fa9fd7635ca/01722734251-p/01722734251-p.jpg" class="active" onclick="changeImage('img-est-1', this)">
-                            <img src="https://static.bershka.net/assets/public/9d90/8e81/2d614ac994c7/6735f60b375d/01722734251-a4o/01722734251-a4o.jpg" onclick="changeImage('img-est-1', this)">
+                            <img src="https://static.bershka.net/assets/public/6910/f586/f4a84e49980d/18e5b02660ae/07134445800-p/07134445800-p.jpg" onclick="changeImage('img-hoodie-1', this.src)">
+                            <img src="https://static.bershka.net/assets/public/01ec/3602/a92f447781f3/3103ca09689f/07134445800-a2o/07134445800-a2o.jpg" onclick="changeImage('img-hoodie-1', this.src)">
                         </div>
                         <div class="product-info">
-                            <span class="brand-tag">Grafite Series</span>
-                            <h3>Camisa Graphic Dark</h3>
-                            <div class="price-row">
-                                <p class="price">R$ 120,00</p>
-                                <button class="buy-btn" onclick="addToCart()">Comprar</button>
-                            </div>
+                            <h3>Hoodie Boxy Fit Black</h3>
+                            <p class="price">R$ 249,90</p>
+                            <button class="buy-btn" onclick="addToCart()">Comprar</button>
                         </div>
                     </article>
                 </div>
@@ -101,20 +102,21 @@
 
         <section id="calcas">
             <h2 class="category-title">Calças</h2>
-            <div id="calcas-moletom" class="subcategory-block">
-                <h3 class="subcategory-label"><span>//</span> Calças Moletom</h3>
+            <div id="calcas-jeans" class="subcategory-block">
+                <h3 class="subcategory-title"><span>//</span> Jeans & Cargo</h3>
                 <div class="product-grid">
                     <article class="product-card">
                         <div class="img-container">
-                            <img src="https://static.bershka.net/assets/public/ff77/7592/1cc54f65a5b0/4e728e463f89/07369190812-b/07369190812-b.jpg" class="main-display-img">
+                            <img src="https://static.bershka.net/assets/public/1d3a/f73e/622b43bda45e/1a5aca8bc1af/05350211800-a3o/05350211800-a3o.jpg" id="img-jeans-1" class="main-display-img">
+                        </div>
+                        <div class="thumbnails">
+                            <img src="https://static.bershka.net/assets/public/1d3a/f73e/622b43bda45e/1a5aca8bc1af/05350211800-a3o/05350211800-a3o.jpg" onclick="changeImage('img-jeans-1', this.src)">
+                            <img src="https://static.bershka.net/assets/public/9e8b/8549/50634628a52e/d06584c68832/05350211800-p/05350211800-p.jpg" onclick="changeImage('img-jeans-1', this.src)">
                         </div>
                         <div class="product-info">
-                            <span class="brand-tag">Streetwear</span>
-                            <h3>Jogger Street Purple</h3>
-                            <div class="price-row">
-                                <p class="price">R$ 159,90</p>
-                                <button class="buy-btn" onclick="addToCart()">Comprar</button>
-                            </div>
+                            <h3>Jeans Baggy Multi-pocket</h3>
+                            <p class="price">R$ 199,90</p>
+                            <button class="buy-btn" onclick="addToCart()">Comprar</button>
                         </div>
                     </article>
                 </div>
@@ -124,26 +126,15 @@
     </main>
 
     <script>
-        function changeImage(targetId, thumb) {
+        function changeImage(targetId, src) {
             const mainImg = document.getElementById(targetId);
-            mainImg.style.opacity = '0.5';
-            setTimeout(() => {
-                mainImg.src = thumb.src;
-                mainImg.style.opacity = '1';
-            }, 150);
-
-            const allThumbs = thumb.parentElement.querySelectorAll('img');
-            allThumbs.forEach(img => img.classList.remove('active'));
-            thumb.classList.add('active');
+            if(mainImg) mainImg.src = src;
         }
 
         let count = 0;
         function addToCart() {
             count++;
-            const cart = document.getElementById('cart-count');
-            cart.innerText = count;
-            cart.style.transform = 'scale(1.3)';
-            setTimeout(() => cart.style.transform = 'scale(1)', 200);
+            document.getElementById('cart-count').innerText = count;
         }
     </script>
 </body>
