@@ -1,218 +1,124 @@
-:root {
-    --primary: #8a2be2;
-    --bg: #050505;
-    --card: #121212;
-    --border: #222;
-}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3F STORE | High Streetwear</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
 
-* { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
+    <div id="login-modal" class="modal-overlay" aria-hidden="true">
+        <div class="modal-content">
+            <button class="close-modal" onclick="toggleModal()" aria-label="Fechar">&times;</button>
+            
+            <div id="login-form">
+                <h2>Welcome Back</h2>
+                <p class="subtitle">Acesse sua conta para finalizar pedidos.</p>
+                <div class="input-group">
+                    <input type="email" id="login-email" required placeholder=" ">
+                    <label>E-mail</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="login-pass" required placeholder=" ">
+                    <label>Senha</label>
+                </div>
+                <button class="action-btn main-btn" onclick="handleAuth('login')">Entrar</button>
+                <p class="switch-text">Novo por aqui? <a href="#" onclick="switchForm('register')">Crie uma conta</a></p>
+            </div>
 
-body { 
-    font-family: 'Inter', sans-serif; 
-    background: var(--bg); 
-    color: white; 
-    scroll-behavior: smooth; 
-}
+            <div id="register-form" style="display: none;">
+                <h2>Join the Club</h2>
+                <div class="input-group"><input type="text" id="reg-name" required placeholder=" "><label>Nome Completo</label></div>
+                <div class="input-group"><input type="email" id="reg-email" required placeholder=" "><label>E-mail</label></div>
+                <div class="input-group"><input type="password" id="reg-pass" required placeholder=" "><label>Senha</label></div>
+                <h3 class="section-divider">Shipping Info</h3>
+                <div class="input-row">
+                    <div class="input-group"><input type="text" id="reg-cep" required placeholder=" "><label>CEP</label></div>
+                    <div class="input-group"><input type="text" id="reg-city" required placeholder=" "><label>Cidade</label></div>
+                </div>
+                <div class="input-group"><input type="text" id="reg-street" required placeholder=" "><label>Endereço e Número</label></div>
+                <button class="action-btn main-btn" onclick="handleAuth('register')">Finalizar Cadastro</button>
+                <p class="switch-text">Já é membro? <a href="#" onclick="switchForm('login')">Fazer Login</a></p>
+            </div>
+        </div>
+    </div>
 
-.container { 
-    max-width: 1300px; 
-    margin: 0 auto; 
-    padding: 0 20px; 
-}
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">3F<span>STORE</span></div>
+            <nav class="main-nav">
+                <ul class="nav-links">
+                    <li><a href="#camisas">Camisas</a></li>
+                    <li><a href="#calcas">Calças</a></li>
+                    <li><a href="#moletons">Moletons</a></li>
+                    <li><a href="#shorts">Shorts</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="icon-btn" onclick="toggleModal()">
+                    <span class="icon">🛒</span>
+                    <span id="cart-count" class="badge">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
 
-/* HEADER */
-.main-header {
-    background: rgba(10, 10, 10, 0.95);
-    padding: 15px 0;
-    border-bottom: 1px solid var(--border);
-    position: sticky; 
-    top: 0; 
-    z-index: 1000;
-}
+    <main class="container">
+        <section id="shorts" class="product-section">
+            <div class="section-header">
+                <h2 class="category-title">Shorts Moletom</h2>
+                <span class="product-count">2 Itens</span>
+            </div>
+            
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="img-badge">New Drop</div>
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/0101/0508/0411/480c57f20101/387081702812/05864332800-p/05864332800-p.jpg" alt="Short Urban" class="main-display-img">
+                    </div>
+                    <div class="product-info">
+                        <div class="meta">
+                            <h3>Short Moletom Urban</h3>
+                            <p class="price">R$ 95,90</p>
+                        </div>
+                        <div class="size-selector">
+                            <span>Tamanho:</span>
+                            <div class="size-options">
+                                <button class="size-btn" onclick="selectSize(this)">P</button>
+                                <button class="size-btn" onclick="selectSize(this)">M</button>
+                                <button class="size-btn" onclick="selectSize(this)">G</button>
+                            </div>
+                        </div>
+                        <button class="buy-btn" onclick="addToCart('Short Moletom Urban')">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
 
-.header-content { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-}
+                <article class="product-card">
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg" alt="Moletom Art" class="main-display-img">
+                    </div>
+                    <div class="product-info">
+                        <div class="meta">
+                            <h3>Moletom Estampado Art</h3>
+                            <p class="price">R$ 219,90</p>
+                        </div>
+                        <div class="size-selector">
+                            <span>Tamanho:</span>
+                            <div class="size-options">
+                                <button class="size-btn" onclick="selectSize(this)">M</button>
+                                <button class="size-btn" onclick="selectSize(this)">G</button>
+                                <button class="size-btn" onclick="selectSize(this)">GG</button>
+                            </div>
+                        </div>
+                        <button class="buy-btn" onclick="addToCart('Moletom Estampado Art')">Adicionar ao Carrinho</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
 
-.logo { 
-    font-size: 1.5rem; 
-    font-weight: 800; 
-}
-
-.logo span { 
-    color: var(--primary); 
-}
-
-.nav-links { 
-    display: flex; 
-    list-style: none; 
-    gap: 20px; 
-}
-
-.nav-links a { 
-    color: white; 
-    text-decoration: none; 
-    font-size: 0.8rem; 
-    text-transform: uppercase; 
-    transition: 0.3s;
-}
-
-.nav-links a:hover {
-    color: var(--primary);
-}
-
-/* MODAL */
-.modal-overlay {
-    position: fixed; 
-    top: 0; 
-    left: 0; 
-    width: 100%; 
-    height: 100%;
-    background: rgba(0,0,0,0.9); 
-    display: none; 
-    justify-content: center; 
-    align-items: center; 
-    z-index: 2000;
-}
-
-.modal-content { 
-    background: var(--card); 
-    padding: 30px; 
-    border-radius: 10px; 
-    border: 1px solid var(--primary); 
-    width: 100%; 
-    max-width: 400px; 
-    position: relative; 
-}
-
-.modal-content input { 
-    width: 100%; 
-    padding: 12px; 
-    margin-bottom: 10px; 
-    background: #1a1a1a; 
-    border: 1px solid var(--border); 
-    color: white; 
-    border-radius: 4px; 
-}
-
-.close-modal { 
-    position: absolute; 
-    top: 10px; 
-    right: 15px; 
-    cursor: pointer; 
-    font-size: 24px; 
-}
-
-.address-title { 
-    color: var(--primary); 
-    margin: 15px 0 5px; 
-    font-size: 0.9rem; 
-}
-
-/* PRODUTOS E MINIATURAS INTERATIVAS */
-.category-title { 
-    font-size: 2rem; 
-    color: var(--primary); 
-    margin: 40px 0 20px; 
-    text-transform: uppercase; 
-}
-
-.product-grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); 
-    gap: 30px; 
-}
-
-.product-card { 
-    background: var(--card); 
-    padding: 20px; 
-    border-radius: 12px; 
-    border: 1px solid var(--border); 
-    transition: 0.3s ease; 
-}
-
-.product-card:hover { 
-    border-color: var(--primary); 
-    transform: translateY(-5px); 
-}
-
-.img-container { 
-    width: 100%; 
-    height: 400px; 
-    overflow: hidden; 
-    border-radius: 8px; 
-    margin-bottom: 15px; 
-    background: #1a1a1a;
-}
-
-.main-display-img { 
-    width: 100%; 
-    height: 100%; 
-    object-fit: cover; 
-    transition: transform 0.5s ease; /* Transição suave para o zoom */
-}
-
-/* Efeito Interativo na Miniatura */
-.product-card:hover .main-display-img {
-    transform: scale(1.1);
-}
-
-.size-selector { margin: 15px 0; }
-
-.size-options { 
-    display: flex; 
-    gap: 10px; 
-}
-
-.size-btn { 
-    background: transparent; 
-    border: 1px solid var(--border); 
-    color: white; 
-    padding: 6px 12px; 
-    cursor: pointer; 
-    border-radius: 4px; 
-    transition: 0.2s;
-}
-
-.size-btn:hover {
-    border-color: var(--primary);
-}
-
-.size-btn.active { 
-    background: var(--primary); 
-    border-color: var(--primary); 
-}
-
-.buy-btn { 
-    width: 100%; 
-    padding: 15px; 
-    background: var(--primary); 
-    color: white; 
-    border: none; 
-    font-weight: 800; 
-    border-radius: 6px; 
-    cursor: pointer; 
-    transition: 0.3s;
-}
-
-.buy-btn:hover {
-    filter: brightness(1.2);
-}
-
-.cart-icon { 
-    cursor: pointer; 
-    background: #1a1a1a; 
-    padding: 8px 15px; 
-    border-radius: 20px; 
-    border: 1px solid transparent;
-}
-
-.cart-icon:hover {
-    border-color: var(--primary);
-}
+    <script src="script.js"></script>
+</body>
+</html>
