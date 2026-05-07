@@ -1,124 +1,158 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3F STORE | High Streetwear</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-</head>
-<body>
+:root {
+    --primary: #8a2be2;
+    --primary-glow: rgba(138, 43, 226, 0.4);
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --card-bg: #1c1c1c;
+    --text-main: #ffffff;
+    --text-dim: #a0a0a0;
+    --border: #2a2a2a;
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-    <div id="login-modal" class="modal-overlay" aria-hidden="true">
-        <div class="modal-content">
-            <button class="close-modal" onclick="toggleModal()" aria-label="Fechar">&times;</button>
-            
-            <div id="login-form">
-                <h2>Welcome Back</h2>
-                <p class="subtitle">Acesse sua conta para finalizar pedidos.</p>
-                <div class="input-group">
-                    <input type="email" id="login-email" required placeholder=" ">
-                    <label>E-mail</label>
-                </div>
-                <div class="input-group">
-                    <input type="password" id="login-pass" required placeholder=" ">
-                    <label>Senha</label>
-                </div>
-                <button class="action-btn main-btn" onclick="handleAuth('login')">Entrar</button>
-                <p class="switch-text">Novo por aqui? <a href="#" onclick="switchForm('register')">Crie uma conta</a></p>
-            </div>
+* { 
+    margin: 0; padding: 0; box-sizing: border-box; 
+    -webkit-font-smoothing: antialiased;
+}
 
-            <div id="register-form" style="display: none;">
-                <h2>Join the Club</h2>
-                <div class="input-group"><input type="text" id="reg-name" required placeholder=" "><label>Nome Completo</label></div>
-                <div class="input-group"><input type="email" id="reg-email" required placeholder=" "><label>E-mail</label></div>
-                <div class="input-group"><input type="password" id="reg-pass" required placeholder=" "><label>Senha</label></div>
-                <h3 class="section-divider">Shipping Info</h3>
-                <div class="input-row">
-                    <div class="input-group"><input type="text" id="reg-cep" required placeholder=" "><label>CEP</label></div>
-                    <div class="input-group"><input type="text" id="reg-city" required placeholder=" "><label>Cidade</label></div>
-                </div>
-                <div class="input-group"><input type="text" id="reg-street" required placeholder=" "><label>Endereço e Número</label></div>
-                <button class="action-btn main-btn" onclick="handleAuth('register')">Finalizar Cadastro</button>
-                <p class="switch-text">Já é membro? <a href="#" onclick="switchForm('login')">Fazer Login</a></p>
-            </div>
-        </div>
-    </div>
+body { 
+    font-family: 'Inter', sans-serif; 
+    background: var(--bg); 
+    color: var(--text-main); 
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-    <header class="main-header">
-        <div class="container header-content">
-            <div class="logo">3F<span>STORE</span></div>
-            <nav class="main-nav">
-                <ul class="nav-links">
-                    <li><a href="#camisas">Camisas</a></li>
-                    <li><a href="#calcas">Calças</a></li>
-                    <li><a href="#moletons">Moletons</a></li>
-                    <li><a href="#shorts">Shorts</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <button class="icon-btn" onclick="toggleModal()">
-                    <span class="icon">🛒</span>
-                    <span id="cart-count" class="badge">0</span>
-                </button>
-            </div>
-        </div>
-    </header>
+.container { max-width: 1400px; margin: 0 auto; padding: 0 30px; }
 
-    <main class="container">
-        <section id="shorts" class="product-section">
-            <div class="section-header">
-                <h2 class="category-title">Shorts Moletom</h2>
-                <span class="product-count">2 Itens</span>
-            </div>
-            
-            <div class="product-grid">
-                <article class="product-card">
-                    <div class="img-badge">New Drop</div>
-                    <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/0101/0508/0411/480c57f20101/387081702812/05864332800-p/05864332800-p.jpg" alt="Short Urban" class="main-display-img">
-                    </div>
-                    <div class="product-info">
-                        <div class="meta">
-                            <h3>Short Moletom Urban</h3>
-                            <p class="price">R$ 95,90</p>
-                        </div>
-                        <div class="size-selector">
-                            <span>Tamanho:</span>
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                            </div>
-                        </div>
-                        <button class="buy-btn" onclick="addToCart('Short Moletom Urban')">Adicionar ao Carrinho</button>
-                    </div>
-                </article>
+/* HEADER GLASSMORPHISM */
+.main-header {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 1000;
+}
 
-                <article class="product-card">
-                    <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg" alt="Moletom Art" class="main-display-img">
-                    </div>
-                    <div class="product-info">
-                        <div class="meta">
-                            <h3>Moletom Estampado Art</h3>
-                            <p class="price">R$ 219,90</p>
-                        </div>
-                        <div class="size-selector">
-                            <span>Tamanho:</span>
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                                <button class="size-btn" onclick="selectSize(this)">GG</button>
-                            </div>
-                        </div>
-                        <button class="buy-btn" onclick="addToCart('Moletom Estampado Art')">Adicionar ao Carrinho</button>
-                    </div>
-                </article>
-            </div>
-        </section>
-    </main>
+.header-content { display: flex; justify-content: space-between; align-items: center; }
 
-    <script src="script.js"></script>
-</body>
-</html>
+.logo { font-size: 1.8rem; font-weight: 800; letter-spacing: -1px; }
+.logo span { color: var(--primary); text-shadow: 0 0 15px var(--primary-glow); }
+
+.nav-links { display: flex; list-style: none; gap: 30px; }
+.nav-links a { 
+    color: var(--text-dim); text-decoration: none; 
+    font-size: 0.85rem; font-weight: 600; text-transform: uppercase; 
+    transition: var(--transition);
+}
+.nav-links a:hover { color: var(--text-main); letter-spacing: 1px; }
+
+/* BADGE CARRINHO */
+.icon-btn { 
+    background: var(--surface); border: 1px solid var(--border); 
+    color: white; padding: 10px 18px; border-radius: 50px; cursor: pointer;
+    position: relative; transition: var(--transition);
+}
+.icon-btn:hover { border-color: var(--primary); background: #222; }
+.badge {
+    position: absolute; top: -5px; right: -5px;
+    background: var(--primary); font-size: 0.7rem;
+    width: 20px; height: 20px; border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* PRODUCT GRID */
+.product-section { margin: 60px 0; }
+.section-header { display: flex; align-items: baseline; gap: 15px; margin-bottom: 30px; }
+.category-title { font-size: 2.5rem; font-weight: 800; text-transform: uppercase; }
+.product-count { color: var(--text-dim); font-weight: 300; }
+
+.product-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    gap: 40px; 
+}
+
+/* CARDS */
+.product-card { 
+    background: var(--card-bg); border-radius: 20px; 
+    overflow: hidden; border: 1px solid var(--border);
+    transition: var(--transition); position: relative;
+    animation: fadeIn 0.8s ease backwards;
+}
+
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } }
+
+.product-card:hover { 
+    transform: translateY(-10px); 
+    border-color: var(--primary);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.img-container { 
+    width: 100%; height: 450px; overflow: hidden; background: #111; 
+}
+
+.main-display-img { 
+    width: 100%; height: 100%; object-fit: cover; 
+    transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.product-card:hover .main-display-img { transform: scale(1.08); }
+
+.img-badge {
+    position: absolute; top: 15px; left: 15px; z-index: 2;
+    background: var(--primary); color: white; padding: 5px 12px;
+    border-radius: 4px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase;
+}
+
+.product-info { padding: 25px; }
+.meta { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+.meta h3 { font-size: 1.1rem; font-weight: 600; }
+.price { color: var(--primary); font-weight: 800; font-size: 1.2rem; }
+
+.size-selector span { display: block; font-size: 0.8rem; color: var(--text-dim); margin-bottom: 10px; }
+.size-options { display: flex; gap: 10px; margin-bottom: 25px; }
+
+.size-btn { 
+    background: transparent; border: 1px solid var(--border); color: white;
+    width: 45px; height: 45px; border-radius: 12px; cursor: pointer; transition: 0.3s;
+}
+
+.size-btn:hover { border-color: var(--text-main); }
+.size-btn.active { background: white; color: black; border-color: white; font-weight: 800; }
+
+.buy-btn { 
+    width: 100%; padding: 18px; background: var(--primary); color: white;
+    border: none; font-weight: 800; border-radius: 14px; cursor: pointer;
+    transition: var(--transition); text-transform: uppercase; letter-spacing: 1px;
+}
+
+.buy-btn:hover { 
+    background: #9d46ff; 
+    box-shadow: 0 0 20px var(--primary-glow);
+}
+
+/* MODAL / INPUTS */
+.modal-content h2 { font-size: 2rem; margin-bottom: 10px; }
+.subtitle { color: var(--text-dim); margin-bottom: 30px; font-size: 0.9rem; }
+
+.input-group { position: relative; margin-bottom: 20px; width: 100%; }
+.input-group input {
+    width: 100%; padding: 15px; background: #000; border: 1px solid var(--border);
+    border-radius: 10px; color: white; outline: none; transition: 0.3s;
+}
+
+.input-group label {
+    position: absolute; left: 15px; top: 50%; transform: translateY(-50%);
+    color: var(--text-dim); pointer-events: none; transition: 0.3s;
+}
+
+.input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label {
+    top: -10px; left: 10px; font-size: 0.75rem; background: var(--card-bg);
+    padding: 0 5px; color: var(--primary);
+}
+
+.input-group input:focus { border-color: var(--primary); }
