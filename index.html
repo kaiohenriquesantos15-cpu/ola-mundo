@@ -3,15 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olá Mundo | GitHub Project</title>
+    <title>FOOTBALL ELITE | O Jogo Começa Aqui</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="center-content">
-        <h1 class="hello">OLÁ, <span class="red">MUNDO!</span></h1>
-        <p class="sub">Meu primeiro projeto estilizado.</p>
-        <div class="line"></div>
-        <a href="https://github.com/SEU-USUARIO" class="github-link">MEU GITHUB</a>
-    </div>
+
+    <header class="navbar">
+        <div class="container flex-nav">
+            <div class="logo">FTBL<span>ELITE</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Notícias</a></li>
+                    <li><a href="#">Tabela</a></li>
+                    <li><a href="#">Times</a></li>
+                    <li><a href="#" class="btn-live">AO VIVO</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-overlay">
+            <div class="container hero-content">
+                <span class="badge">Destaque da Semana</span>
+                <h1>A ERA DOS <span class="red">GIGANTES</span> RETORNOU</h1>
+                <p>Acompanhe tudo sobre a Champions League, mercado da bola e análises táticas exclusivas.</p>
+                <div class="hero-btns">
+                    <a href="#" class="btn-primary">Ver Notícias</a>
+                    <a href="#" class="btn-secondary">Resultados</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="container main-layout">
+        
+        <section class="news-section">
+            <h2 class="section-title">Últimas Notícias</h2>
+            <div class="news-grid">
+                <article class="news-card">
+                    <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=500')"></div>
+                    <div class="news-info">
+                        <span class="tag">Transferências</span>
+                        <h3>Novo camisa 10 chega na capital sob festa da torcida</h3>
+                        <p>O craque assinou por 5 temporadas com salário recorde...</p>
+                    </div>
+                </article>
+
+                <article class="news-card">
+                    <div class="news-img" style="background-image: url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?q=80&w=500')"></div>
+                    <div class="news-info">
+                        <span class="tag">Análise</span>
+                        <h3>Como o novo esquema tático mudou o rumo da liga</h3>
+                        <p>Analistas mostram o impacto da marcação pressão alta...</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <aside class="sidebar">
+            <h2 class="section-title">Classificação</h2>
+            <table class="table-stats">
+                <thead>
+                    <tr>
+                        <th>Pos</th>
+                        <th>Clube</th>
+                        <th>Pts</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Manchester City</td>
+                        <td>78</td>
+                    </tr>
+                    <tr class="highlight-row">
+                        <td>2</td>
+                        <td>Real Madrid</td>
+                        <td>75</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Bayern</td>
+                        <td>70</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Arsenal</td>
+                        <td>68</td>
+                    </tr>
+                </tbody>
+            </table>
+        </aside>
+
+    </main>
+
+    <footer class="main-footer">
+        <p>&copy; 2026 FTBL ELITE - O melhor do futebol mundial.</p>
+    </footer>
+
 </body>
 </html>
