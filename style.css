@@ -1,61 +1,204 @@
-/* Reset básico */
+/* VARIÁVEIS DE CORES */
+:root {
+    --primary: #00ff41;    /* Verde Neon */
+    --bg-dark: #050505;   /* Preto Fundo */
+    --surface: #121212;   /* Cinza Card */
+    --text: #ffffff;
+    --accent: #ff004c;    /* Rosa/Vermelho para Ao Vivo */
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Arial Black', sans-serif;
 }
 
 body {
-    background-color: #000000; /* Preto */
-    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-dark);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* NAVBAR */
+.navbar {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 20px 0;
+    border-bottom: 1px solid #222;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.flex-nav {
     display: flex;
-    justify-content: center; /* Centraliza horizontal */
-    align-items: center;     /* Centraliza vertical */
-    color: #ffffff;          /* Branco */
+    justify-content: space-between;
+    align-items: center;
 }
 
-.center-content {
-    text-align: center;
-}
-
-.hello {
-    font-size: 5rem;
-    letter-spacing: -3px;
-    margin-bottom: 10px;
-}
-
-.red {
-    color: #ff0000; /* Vermelho */
-}
-
-.sub {
-    font-size: 1.2rem;
-    color: #888;
-    text-transform: uppercase;
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    font-weight: 900;
     letter-spacing: 2px;
 }
 
-.line {
-    height: 5px;
-    width: 80px;
-    background-color: #ff0000;
-    margin: 20px auto;
+.logo span {
+    color: var(--primary);
 }
 
-.github-link {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 10px 25px;
-    background-color: #ffffff;
-    color: #000000;
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+
+.nav-links a {
     text-decoration: none;
-    font-weight: bold;
-    border-radius: 3px;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
     transition: 0.3s;
 }
 
-.github-link:hover {
-    background-color: #ff0000;
-    color: #ffffff;
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.btn-live {
+    background: var(--accent);
+    padding: 8px 15px;
+    border-radius: 4px;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+/* HERO SECTION */
+.hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1574629810360-7efbbe195018?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 3.5rem;
+    margin: 15px 0;
+    max-width: 700px;
+}
+
+.badge {
+    background: var(--primary);
+    color: black;
+    padding: 5px 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.cta {
+    background: white;
+    color: black;
+    border: none;
+    padding: 15px 30px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.cta:hover {
+    background: var(--primary);
+    transform: translateY(-3px);
+}
+
+/* MATCH BAR */
+.match-bar {
+    background: #111;
+    padding: 15px 0;
+    border-bottom: 2px solid var(--primary);
+}
+
+.flex-matches {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.match-card {
+    background: #1a1a1a;
+    padding: 10px 20px;
+    min-width: 200px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.live-tag { color: var(--accent); font-weight: bold; }
+.time-tag { color: #888; }
+
+/* NEWS GRID */
+.content { padding: 60px 0; }
+
+.section-title {
+    font-family: 'Orbitron', sans-serif;
+    margin-bottom: 30px;
+    border-left: 5px solid var(--primary);
+    padding-left: 15px;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.news-item {
+    background: var(--surface);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.news-item:hover {
+    transform: scale(1.03);
+}
+
+.news-img {
+    height: 200px;
+    width: 100%;
+}
+
+.news-item h3 {
+    padding: 20px 20px 10px;
+}
+
+.news-item p {
+    padding: 0 20px 20px;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #222;
+    color: #555;
 }
