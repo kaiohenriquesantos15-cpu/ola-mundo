@@ -1,84 +1,162 @@
-/* Importando uma fonte mais robusta */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap');
-
 :root {
-    --bg-color: #0a0a0a;       /* Preto Profundo */
-    --card-bg: #111111;       /* Preto Acinzentado */
-    --primary-red: #ff0000;   /* Vermelho Puro */
-    --text-white: #ffffff;    /* Branco */
-    --text-gray: #888888;     /* Cinza para subtítulos */
+    --bg: #000000;         /* Preto */
+    --card-bg: #0a0a0a;    /* Preto levemente mais claro */
+    --primary: #ff0000;    /* Vermelho */
+    --white: #ffffff;      /* Branco */
+    --gray: #888888;
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--bg); 
+    color: var(--white);
+    line-height: 1.6;
 }
 
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-color);
-    color: var(--text-white);
-    height: 100vh;
-    display: flex;
-    justify-content: center; /* Centraliza horizontalmente */
-    align-items: center;     /* Centraliza verticalmente */
+.container { 
+    max-width: 1200px; 
+    margin: 0 auto; 
+    padding: 0 20px; 
 }
 
-.card {
-    text-align: center;
-    background-color: var(--card-bg);
-    padding: 3rem;
-    border-radius: 15px;
-    border: 1px solid #222;
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-    transition: transform 0.3s ease;
+/* HEADER CENTRALIZADO */
+.main-header {
+    background: var(--card-bg);
+    border-bottom: 2px solid var(--primary);
+    padding: 20px 0;
+    text-align: center; /* Centraliza o conteúdo do header */
 }
 
-.card:hover {
-    transform: scale(1.02);
-    border-color: var(--primary-red);
+.logo { 
+    font-size: 2rem; 
+    font-weight: 900; 
+    margin-bottom: 10px;
+    letter-spacing: -1px;
+}
+.logo span { color: var(--primary); }
+
+.nav-links { 
+    list-style: none; 
+    display: flex; 
+    justify-content: center; /* Centraliza os links do menu */
+    gap: 30px; 
 }
 
-.title {
-    font-size: 3.5rem;
+.nav-links a { 
+    color: var(--white); 
+    text-decoration: none; 
+    text-transform: uppercase; 
+    font-weight: 700;
+    font-size: 0.9rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+/* SEÇÕES CENTRALIZADAS */
+.category-section {
+    padding: 60px 0;
+    text-align: center; /* Centraliza títulos e conteúdo das seções */
+}
+
+.category-title {
+    font-size: 2.5rem;
     font-weight: 900;
-    letter-spacing: -2px;
-    margin-bottom: 1rem;
-}
-
-.highlight {
-    color: var(--primary-red);
     text-transform: uppercase;
+    margin-bottom: 40px;
+    border-bottom: 4px solid var(--primary);
+    display: inline-block; /* Faz a borda acompanhar o texto */
 }
 
-.description {
-    color: var(--text-gray);
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+/* GRID DE PRODUTOS */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os cards caso não preencham a linha */
+    gap: 30px;
 }
 
-.divider {
-    height: 4px;
-    width: 60px;
-    background-color: var(--primary-red);
-    margin: 0 auto 2rem;
+.product-card {
+    background: var(--card-bg);
+    width: 300px;
+    padding: 20px;
+    border: 1px solid #222;
+    border-radius: 10px;
+    transition: 0.4s;
 }
 
-.btn-github {
-    display: inline-block;
-    padding: 12px 30px;
-    background-color: var(--text-white);
-    color: var(--bg-color);
-    text-decoration: none;
-    font-weight: 800;
+.product-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-10px);
+}
+
+.img-container {
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+    margin-bottom: 20px;
     border-radius: 5px;
-    transition: all 0.3s ease;
-    border: 2px solid var(--text-white);
 }
 
-.btn-github:hover {
-    background-color: transparent;
-    color: var(--primary-red);
-    border-color: var(--primary-red);
+.main-display-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+
+.product-card:hover .main-display-img {
+    transform: scale(1.1);
+}
+
+.product-info h3 { margin-bottom: 10px; font-size: 1.2rem; }
+
+.price { 
+    color: var(--primary); 
+    font-weight: 900; 
+    font-size: 1.4rem; 
+    margin-bottom: 15px; 
+}
+
+/* OPÇÕES DE TAMANHO */
+.size-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.size-btn {
+    background: transparent;
+    border: 1px solid var(--white);
+    color: var(--white);
+    padding: 5px 12px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.size-btn:hover, .size-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* BOTÃO DE COMPRA */
+.buy-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--white);
+    color: var(--bg);
+    border: none;
+    font-weight: 900;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.buy-btn:hover {
+    background: var(--primary);
+    color: var(--white);
 }
