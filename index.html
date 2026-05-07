@@ -3,17 +3,96 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Olá Mundo | Red & Black</title>
+    <title>3F STORE | Red & Black Collection</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main class="main-container">
-        <section class="card">
-            <h1 class="title">Olá, <span class="highlight">Mundo!</span></h1>
-            <p class="description">Projeto inicial para o meu portfólio no GitHub.</p>
-            <div class="divider"></div>
-            <a href="#" class="btn-github">Ver Repositório</a>
+
+    <header class="main-header">
+        <div class="container header-content">
+            <div class="logo">3F <span>STORE</span></div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#camisas-estampadas">Camisas</a></li>
+                    <li><a href="#moletons-estampados">Moletons</a></li>
+                    <li><a href="#shorts-moletom">Shorts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section id="camisas-estampadas" class="category-section">
+            <h2 class="category-title">Camisas Estampadas</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/7e2c/683c/098947f6946a/387258957827/05721118800-p/05721118800-p.jpg" class="main-display-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>Camisa Red Graphic</h3>
+                        <p class="price">R$ 119,90</p>
+                        <div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">P</button>
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                        </div>
+                        <button class="buy-btn">Comprar</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="moletons-estampados" class="category-section">
+            <h2 class="category-title">Moletons Estampados</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg" class="main-display-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>Moletom Dark Print</h3>
+                        <p class="price">R$ 229,90</p>
+                        <div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                            <button class="size-btn" onclick="selectSize(this)">GG</button>
+                        </div>
+                        <button class="buy-btn">Comprar</button>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="shorts-moletom" class="category-section">
+            <h2 class="category-title">Shorts Moletom</h2>
+            <div class="product-grid">
+                <article class="product-card">
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/0101/0508/0411/480c57f20101/387081702812/05864332800-p/05864332800-p.jpg" class="main-display-img">
+                    </div>
+                    <div class="product-info">
+                        <h3>Short Comfort Red</h3>
+                        <p class="price">R$ 89,90</p>
+                        <div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">P</button>
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                        </div>
+                        <button class="buy-btn">Comprar</button>
+                    </div>
+                </article>
+            </div>
         </section>
     </main>
+
+    <script>
+        function selectSize(btn) {
+            const parent = btn.parentElement;
+            parent.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+        }
+    </script>
 </body>
 </html>
