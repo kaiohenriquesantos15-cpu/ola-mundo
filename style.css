@@ -289,20 +289,9 @@ body {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    .category-title { 
-        font-size: 1.5rem; 
-        text-align: center; 
-    }
-    .img-container { 
-        height: 380px; 
-    }
-    .main-display-img {
-        height: 320px;
-    }
-    .nav-links { 
-        gap: 10px; 
-    }
-    .nav-links a { 
-        font-size: 0.7rem; 
-    }
+    .category-title { font-size: 1.5rem; text-align: center; }
+    .img-container { height: 380px; }
+    .main-display-img { height: 320px; }
+    .nav-links { gap: 10px; }
+    .nav-links a { font-size: 0.7rem; }
 }
