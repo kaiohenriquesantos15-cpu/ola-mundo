@@ -153,17 +153,19 @@ body {
     border-radius: 8px;
     margin-bottom: 15px;
     background: #1a1a1a;
+    position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-display-img {
     width: 100%;
-    height: 100%;
+    height: 340px;
     object-fit: cover;
     object-position: top;
     transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Ajuste específico para Camisa Estampada Street */
 .main-display-img.street-shirt {
     object-fit: contain;
     object-position: center;
@@ -171,8 +173,34 @@ body {
     background: #1a1a1a;
 }
 
-.product-card:hover .main-display-img.street-shirt {
-    transform: scale(1.08);
+/* Miniaturas */
+.thumbnails {
+    display: flex;
+    gap: 8px;
+    padding: 10px 0;
+    justify-content: center;
+    background: rgba(0,0,0,0.3);
+    border-top: 1px solid var(--border);
+}
+
+.thumb {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.thumb:hover {
+    border-color: var(--primary);
+    transform: scale(1.05);
+}
+
+.thumb.active {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.3);
 }
 
 .size-selector { 
@@ -266,7 +294,10 @@ body {
         text-align: center; 
     }
     .img-container { 
-        height: 350px; 
+        height: 380px; 
+    }
+    .main-display-img {
+        height: 320px;
     }
     .nav-links { 
         gap: 10px; 
