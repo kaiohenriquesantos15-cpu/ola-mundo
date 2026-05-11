@@ -33,7 +33,6 @@ body {
     top: 0;
     z-index: 1000;
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
 }
 
 .header-content {
@@ -203,8 +202,8 @@ body {
     box-shadow: 0 0 0 2px rgba(138, 43, 226, 0.3);
 }
 
-.size-selector { 
-    margin: 15px 0; 
+.size-selector {
+    margin: 15px 0;
 }
 
 .size-options {
@@ -241,8 +240,6 @@ body {
     border-radius: 6px;
     cursor: pointer;
     transition: 0.3s;
-    position: relative;
-    overflow: hidden;
     text-transform: uppercase;
     letter-spacing: 1px;
 }
@@ -273,16 +270,13 @@ body {
 ::-webkit-scrollbar {
     width: 10px;
 }
-
 ::-webkit-scrollbar-track {
     background: var(--bg);
 }
-
 ::-webkit-scrollbar-thumb {
     background: #333;
     border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
     background: var(--primary);
 }
