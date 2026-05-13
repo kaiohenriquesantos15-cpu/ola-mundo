@@ -32,7 +32,6 @@
             </div>
         </div>
     </div>
-
     <header class="main-header">
         <div class="container header-content">
             <div class="logo">3F <span>STORE</span></div>
@@ -49,7 +48,6 @@
             </div>
         </div>
     </header>
-
     <main class="container">
         <section id="camisas">
             <h2 class="category-title">Camisas</h2>
@@ -76,7 +74,6 @@
                         <button class="buy-btn" onclick="addToCart('Camisa lisa Branca')">Comprar</button>
                     </div>
                 </article>
-
                 <article class="product-card">
                     <div class="img-container">
                         <img src="https://static.bershka.net/assets/public/8dfe/1d63/e3a5403d878e/3fa9fd7635ca/01722734251-p/01722734251-p.jpg?ts=1773154344536&w=850&f=auto" class="main-display-img street-shirt" data-main="true">
@@ -101,7 +98,6 @@
                 </article>
             </div>
         </section>
-
         <section id="calcas">
             <h2 class="category-title">Calças</h2>
             <div class="product-grid">
@@ -127,7 +123,6 @@
                         <button class="buy-btn" onclick="addToCart('Calça Jogger Moletom')">Comprar</button>
                     </div>
                 </article>
-
                 <article class="product-card">
                     <div class="img-container">
                         <img src="https://static.bershka.net/assets/public/993d/f869/985d44349954/f8f247cb8885/05382352433-02-p/05382352433-02-p.jpg?ts=1772117621052&w=850&f=auto" class="main-display-img" data-main="true">
@@ -135,8 +130,8 @@
                             <img src="https://static.bershka.net/assets/public/993d/f869/985d44349954/f8f247cb8885/05382352433-02-p/05382352433-02-p.jpg?ts=1772117621052&w=850&f=auto" onclick="changeImage(this)" class="thumb active">
                             <img src="https://static.bershka.net/assets/public/ad0d/153c/f62b4515ba30/6a825dbeda5f/05382352433-a4o/05382352433-a4o.jpg?ts=1768901982815&w=850&f=auto" onclick="changeImage(this)" class="thumb">
                             <img src="https://static.bershka.net/assets/public/201d/f07b/ee1b427b91da/612255290dab/05382352433-b/05382352433-b.jpg?ts=1768901982907&w=850&f=auto" onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/553b/7b69/0f19496488ad/6dfd89ff8d4d/01196534800-a4o/01196534800-a4o.jpg?ts=1771347701514&w=850&f=auto" onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/c922/08fc/bb864b4e8f58/60942d92c8e1/01196534800-b/01196534800-b.jpg?ts=1771347701260&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/fd59/fbae/0f5d4ddca992/4586edda050a/01196534800-p/01196534800-p.jpg" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/fd59/fbae/0f5d4ddca992/4586edda050a/01196534800-p/01196534800-p.jpg" onclick="changeImage(this)" class="thumb">
                         </div>
                     </div>
                     <div class="product-info">
@@ -154,7 +149,6 @@
                 </article>
             </div>
         </section>
-
         <section id="moletons">
             <h2 class="category-title">Moletons</h2>
             <div class="product-grid">
@@ -180,7 +174,6 @@
                         <button class="buy-btn" onclick="addToCart('Moletom Estampado Pro')">Comprar</button>
                     </div>
                 </article>
-
                 <article class="product-card">
                     <div class="img-container">
                         <img src="https://static.bershka.net/assets/public/96fb/5eb3/1fa44fc9b766/19a9bb017b65/00847741800-p/00847741800-p.jpg?ts=1764685148735&w=850&f=auto" class="main-display-img" data-main="true">
@@ -205,7 +198,6 @@
                 </article>
             </div>
         </section>
-
         <section id="shorts">
             <h2 class="category-title">Shorts</h2>
             <div class="product-grid">
@@ -229,7 +221,6 @@
                         <button class="buy-btn" onclick="addToCart('Bermuda Jeans Baggy')">Comprar</button>
                     </div>
                 </article>
-
                 <article class="product-card">
                     <div class="img-container">
                         <img src="https://static.bershka.net/assets/public/928a/7d41/019c4f41b08b/9b0e0778a1c3/01306498800-p/01306498800-p.jpg?ts=1770882998709&w=850&f=auto" class="main-display-img" data-main="true">
@@ -255,27 +246,22 @@
             </div>
         </section>
     </main>
-
     <script>
         let count = 0;
         let userData = null;
-
         function toggleModal() {
             const modal = document.getElementById('login-modal');
             modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
         }
-
         function switchForm(type) {
             document.getElementById('login-form').style.display = (type === 'login') ? 'block' : 'none';
             document.getElementById('register-form').style.display = (type === 'register') ? 'block' : 'none';
         }
-
         function selectSize(btn) {
             const parent = btn.parentElement;
             parent.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         }
-
         function changeImage(thumb) {
             const container = thumb.parentElement.parentElement;
             const mainImg = container.querySelector('.main-display-img');
@@ -283,7 +269,6 @@
             container.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
             thumb.classList.add('active');
         }
-
         function handleAuth(type) {
             if (type === 'register') {
                 const name = document.getElementById('reg-name').value;
@@ -297,7 +282,6 @@
             }
             toggleModal();
         }
-
         function addToCart(productName) {
             if (!userData) {
                 alert("Faça login para comprar!");
@@ -307,7 +291,7 @@
             const card = event.target.closest('.product-card');
             const size = card.querySelector('.size-btn.active');
             if (!size) { alert("Selecione um tamanho!"); return; }
-           
+          
             count++;
             document.getElementById('cart-count').innerText = count;
             alert(`✅ Confirmado!\nProduto: ${productName}\nTamanho: ${size.innerText}\nEntrega: ${userData.street}`);
