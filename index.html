@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>3F STORE | Full Collection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,6 +32,7 @@
             </div>
         </div>
     </div>
+
     <header class="main-header">
         <div class="container header-content">
             <div class="logo">3F <span>STORE</span></div>
@@ -48,9 +49,22 @@
             </div>
         </div>
     </header>
+
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>Nova Coleção 3F</h1>
+            <p>Streetwear autêntico. Estilo que marca presença.</p>
+            <a href="#camisas" class="hero-btn">Ver Coleção</a>
+        </div>
+    </section>
+
     <main class="container">
+        <!-- CAMISAS -->
         <section id="camisas">
-            <h2 class="category-title">Camisas</h2>
+            <div class="section-header">
+                <h2 class="category-title">Camisas</h2>
+                <span class="product-count">5 produtos</span>
+            </div>
             <div class="product-grid">
                 <article class="product-card">
                     <div class="img-container">
@@ -62,18 +76,18 @@
                         </div>
                     </div>
                     <div class="product-info">
-                        <h3>Camisa lisa Branca</h3>
+                        <span class="badge">Básico</span>
+                        <h3>Camisa Lisa Branca</h3>
                         <p class="price">R$ 100,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                            </div>
-                        </div>
-                        <button class="buy-btn" onclick="addToCart('Camisa lisa Branca')">Comprar</button>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">P</button>
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                        </div></div>
+                        <button class="buy-btn" onclick="addToCart('Camisa Lisa Branca')">Comprar</button>
                     </div>
                 </article>
+
                 <article class="product-card">
                     <div class="img-container">
                         <img src="https://static.bershka.net/assets/public/8dfe/1d63/e3a5403d878e/3fa9fd7635ca/01722734251-p/01722734251-p.jpg?ts=1773154344536&w=850&f=auto" class="main-display-img street-shirt" data-main="true">
@@ -84,22 +98,103 @@
                         </div>
                     </div>
                     <div class="product-info">
+                        <span class="badge new">Novo</span>
                         <h3>Camisa Estampada</h3>
                         <p class="price">R$ 150,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">P</button>
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                        </div></div>
+                        <button class="buy-btn" onclick="addToCart('Camisa Estampada Street')">Comprar</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/327f/d465/ba6544c68d17/5c8279f7a662/00069154250-p/00069154250-p.jpg" class="main-display-img" data-main="true">
+                        <div class="thumbnails">
+                            <img src="https://static.bershka.net/assets/public/327f/d465/ba6544c68d17/5c8279f7a662/00069154250-p/00069154250-p.jpg" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/0e3c/7776/fdbf4105b127/0155aa573671/00069154250-a4o/00069154250-a4o.jpg?ts=1777561199462&w=850" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/4882/0e2f/ea4b48f8a728/e6f06e51e170/00069154250-b/00069154250-b.jpg?ts=1777561199699&w=850" onclick="changeImage(this)" class="thumb">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="badge">Oversized</span>
+                        <h3>Camisa Oversized Preta</h3>
+                        <p class="price">R$ 130,00</p>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">P</button>
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                        </div></div>
+                        <button class="buy-btn" onclick="addToCart('Camisa Oversized Preta')">Comprar</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/8dfe/1d63/e3a5403d878e/3fa9fd7635ca/01722734251-p/01722734251-p.jpg?ts=1773154344536&w=850&f=auto" class="main-display-img street-shirt" data-main="true">
+                        <div class="thumbnails">
+                            <img src="https://static.bershka.net/assets/public/8dfe/1d63/e3a5403d878e/3fa9fd7635ca/01722734251-p/01722734251-p.jpg?ts=1773154344536&w=850&f=auto" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/9d90/8e81/2d614ac994c7/6735f60b375d/01722734251-a4o/01722734251-a4o.jpg?ts=1772200766761&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/ada0/7e10/b13344d793e1/d40430e47cf2/01722734251-b/01722734251-b.jpg?ts=1772200766796&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="badge">Casual</span>
+                        <h3>Camisa Listrada</h3>
+                        <p class="price">R$ 140,00</p>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">P</button>
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                        </div></div>
+                        <button class="buy-btn" onclick="addToCart('Camisa Listrada')">Comprar</button>
+                    </div>
+                </article>
+
+                <!-- CAMISA CANELADA COM CORES -->
+                <article class="product-card" id="produto-canelada">
+                    <div class="img-container">
+                        <img src="canelada-preta-1.jpg" class="main-display-img" data-main="true" id="canelada-main">
+                        <div class="thumbnails" id="canelada-thumbs">
+                            <img src="canelada-preta-1.jpg" onclick="changeImage(this)" class="thumb active">
+                            <img src="canelada-preta-2.jpg" onclick="changeImage(this)" class="thumb">
+                            <img src="canelada-preta-3.jpg" onclick="changeImage(this)" class="thumb">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="badge new">Novo</span>
+                        <h3>Camisa Canelada</h3>
+                        <p class="price">R$ 129,00</p>
+                        <div class="color-selector">
+                            <span class="color-label">Cor:</span>
+                            <div class="color-options">
+                                <button class="color-btn active" data-color="preta" title="Preta" style="background:#111;" onclick="selectColor(this,'canelada')"></button>
+                                <button class="color-btn" data-color="branca" title="Branca" style="background:#f5f5f5;border:1px solid #ccc;" onclick="selectColor(this,'canelada')"></button>
+                                <button class="color-btn" data-color="vermelha" title="Vermelha" style="background:#c41e3a;" onclick="selectColor(this,'canelada')"></button>
+                                <button class="color-btn" data-color="azul" title="Azul" style="background:#1e3a8a;" onclick="selectColor(this,'canelada')"></button>
+                                <button class="color-btn" data-color="verde" title="Verde Militar" style="background:#3d5c3a;" onclick="selectColor(this,'canelada')"></button>
                             </div>
                         </div>
-                        <button class="buy-btn" onclick="addToCart('Camisa Estampada Street')">Comprar</button>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">P</button>
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                        </div></div>
+                        <button class="buy-btn" onclick="addToCart('Camisa Canelada')">Comprar</button>
                     </div>
                 </article>
             </div>
         </section>
+
+        <!-- CALÇAS -->
         <section id="calcas">
-            <h2 class="category-title">Calças</h2>
+            <div class="section-header">
+                <h2 class="category-title">Calças</h2>
+                <span class="product-count">4 produtos</span>
+            </div>
             <div class="product-grid">
                 <article class="product-card">
                     <div class="img-container">
@@ -111,15 +206,14 @@
                         </div>
                     </div>
                     <div class="product-info">
+                        <span class="badge">Conforto</span>
                         <h3>Calça Moletom</h3>
                         <p class="price">R$ 200,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                            </div>
-                        </div>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">P</button>
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                        </div></div>
                         <button class="buy-btn" onclick="addToCart('Calça Jogger Moletom')">Comprar</button>
                     </div>
                 </article>
@@ -133,22 +227,68 @@
                         </div>
                     </div>
                     <div class="product-info">
+                        <span class="badge new">Novo</span>
                         <h3>Calça Jeans Baggy</h3>
                         <p class="price">R$ 220,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">38</button>
-                                <button class="size-btn" onclick="selectSize(this)">40</button>
-                                <button class="size-btn" onclick="selectSize(this)">42</button>
-                            </div>
-                        </div>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">38</button>
+                            <button class="size-btn" onclick="selectSize(this)">40</button>
+                            <button class="size-btn" onclick="selectSize(this)">42</button>
+                        </div></div>
                         <button class="buy-btn" onclick="addToCart('Calça Jeans Baggy')">Comprar</button>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/bfec/e67f/65c94e64883e/421891c94e4b/01501732805-21-p/01501732805-21-p.jpg?ts=1776270191731&w=850&f=auto" class="main-display-img" data-main="true">
+                        <div class="thumbnails">
+                            <img src="https://static.bershka.net/assets/public/bfec/e67f/65c94e64883e/421891c94e4b/01501732805-21-p/01501732805-21-p.jpg?ts=1776270191731&w=850&f=auto" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/2ddd/2298/e8074cd8b60b/605b94986353/01501732805-a4o/01501732805-a4o.jpg?ts=1768289593039&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/de0a/82ac/5d8d4decab2a/846f2d670fb1/01501732805-b/01501732805-b.jpg?ts=1768289592371&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="badge">Utilitário</span>
+                        <h3>Calça Cargo Preta</h3>
+                        <p class="price">R$ 210,00</p>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">P</button>
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                        </div></div>
+                        <button class="buy-btn" onclick="addToCart('Calça Cargo Preta')">Comprar</button>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/993d/f869/985d44349954/f8f247cb8885/05382352433-02-p/05382352433-02-p.jpg?ts=1772117621052&w=850&f=auto" class="main-display-img" data-main="true">
+                        <div class="thumbnails">
+                            <img src="https://static.bershka.net/assets/public/993d/f869/985d44349954/f8f247cb8885/05382352433-02-p/05382352433-02-p.jpg?ts=1772117621052&w=850&f=auto" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/ad0d/153c/f62b4515ba30/6a825dbeda5f/05382352433-a4o/05382352433-a4o.jpg?ts=1768901982815&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/201d/f07b/ee1b427b91da/612255290dab/05382352433-b/05382352433-b.jpg?ts=1768901982907&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="badge">Ajustada</span>
+                        <h3>Calça Jeans Skinny</h3>
+                        <p class="price">R$ 190,00</p>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">38</button>
+                            <button class="size-btn" onclick="selectSize(this)">40</button>
+                            <button class="size-btn" onclick="selectSize(this)">42</button>
+                        </div></div>
+                        <button class="buy-btn" onclick="addToCart('Calça Jeans Skinny')">Comprar</button>
                     </div>
                 </article>
             </div>
         </section>
+
+        <!-- MOLETONS -->
         <section id="moletons">
-            <h2 class="category-title">Moletons</h2>
+            <div class="section-header">
+                <h2 class="category-title">Moletons</h2>
+                <span class="product-count">4 produtos</span>
+            </div>
             <div class="product-grid">
                 <article class="product-card">
                     <div class="img-container">
@@ -160,15 +300,14 @@
                         </div>
                     </div>
                     <div class="product-info">
+                        <span class="badge new">Novo</span>
                         <h3>Moletom Estampado</h3>
                         <p class="price">R$ 200,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                                <button class="size-btn" onclick="selectSize(this)">GG</button>
-                            </div>
-                        </div>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                            <button class="size-btn" onclick="selectSize(this)">GG</button>
+                        </div></div>
                         <button class="buy-btn" onclick="addToCart('Moletom Estampado Pro')">Comprar</button>
                     </div>
                 </article>
@@ -182,22 +321,68 @@
                         </div>
                     </div>
                     <div class="product-info">
+                        <span class="badge">Básico</span>
                         <h3>Moletom Liso Preto</h3>
                         <p class="price">R$ 160,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                                <button class="size-btn" onclick="selectSize(this)">GG</button>
-                            </div>
-                        </div>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                            <button class="size-btn" onclick="selectSize(this)">GG</button>
+                        </div></div>
                         <button class="buy-btn" onclick="addToCart('Moletom Liso Preto')">Comprar</button>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg" class="main-display-img" data-main="true">
+                        <div class="thumbnails">
+                            <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/7cfd/5b3f/db60450f9324/c4743a1ff70d/01259190810-a4o/01259190810-a4o.jpg?ts=1772123507351&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/8f7a/b8d6/f7f94d93ba79/7f3188e4653f/01259190810-b/01259190810-b.jpg?ts=1772123507350&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="badge">Capuz</span>
+                        <h3>Moletom Capuz Preto</h3>
+                        <p class="price">R$ 180,00</p>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                            <button class="size-btn" onclick="selectSize(this)">GG</button>
+                        </div></div>
+                        <button class="buy-btn" onclick="addToCart('Moletom Capuz Preto')">Comprar</button>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/96fb/5eb3/1fa44fc9b766/19a9bb017b65/00847741800-p/00847741800-p.jpg?ts=1764685148735&w=850&f=auto" class="main-display-img" data-main="true">
+                        <div class="thumbnails">
+                            <img src="https://static.bershka.net/assets/public/96fb/5eb3/1fa44fc9b766/19a9bb017b65/00847741800-p/00847741800-p.jpg?ts=1764685148735&w=850&f=auto" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/ec49/8931/16194971959b/ebd3cb618d33/00847741800-a4o/00847741800-a4o.jpg?ts=1763991084007&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/bb28/9632/a58f4c36838a/9495576e5c8d/00847741800-b/00847741800-b.jpg?ts=1763991083821&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="badge">Essencial</span>
+                        <h3>Moletom Cinza Básico</h3>
+                        <p class="price">R$ 170,00</p>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                            <button class="size-btn" onclick="selectSize(this)">GG</button>
+                        </div></div>
+                        <button class="buy-btn" onclick="addToCart('Moletom Cinza Básico')">Comprar</button>
                     </div>
                 </article>
             </div>
         </section>
+
+        <!-- SHORTS -->
         <section id="shorts">
-            <h2 class="category-title">Shorts</h2>
+            <div class="section-header">
+                <h2 class="category-title">Shorts</h2>
+                <span class="product-count">4 produtos</span>
+            </div>
             <div class="product-grid">
                 <article class="product-card">
                     <div class="img-container">
@@ -209,15 +394,14 @@
                         </div>
                     </div>
                     <div class="product-info">
+                        <span class="badge new">Novo</span>
                         <h3>Bermuda Jeans Baggy</h3>
                         <p class="price">R$ 120,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">38</button>
-                                <button class="size-btn" onclick="selectSize(this)">40</button>
-                                <button class="size-btn" onclick="selectSize(this)">42</button>
-                            </div>
-                        </div>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">38</button>
+                            <button class="size-btn" onclick="selectSize(this)">40</button>
+                            <button class="size-btn" onclick="selectSize(this)">42</button>
+                        </div></div>
                         <button class="buy-btn" onclick="addToCart('Bermuda Jeans Baggy')">Comprar</button>
                     </div>
                 </article>
@@ -231,37 +415,107 @@
                         </div>
                     </div>
                     <div class="product-info">
+                        <span class="badge">Conforto</span>
                         <h3>Short Moletom</h3>
                         <p class="price">R$ 90,00</p>
-                        <div class="size-selector">
-                            <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                            </div>
-                        </div>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">P</button>
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                        </div></div>
                         <button class="buy-btn" onclick="addToCart('Short Moletom Urban')">Comprar</button>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/fd59/fbae/0f5d4ddca992/4586edda050a/01196534800-p/01196534800-p.jpg" class="main-display-img" data-main="true">
+                        <div class="thumbnails">
+                            <img src="https://static.bershka.net/assets/public/fd59/fbae/0f5d4ddca992/4586edda050a/01196534800-p/01196534800-p.jpg" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/553b/7b69/0f19496488ad/6dfd89ff8d4d/01196534800-a4o/01196534800-a4o.jpg?ts=1771347701514&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/c922/08fc/bb864b4e8f58/60942d92c8e1/01196534800-b/01196534800-b.jpg?ts=1771347701260&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="badge">Jeans</span>
+                        <h3>Short Jeans Claro</h3>
+                        <p class="price">R$ 110,00</p>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">38</button>
+                            <button class="size-btn" onclick="selectSize(this)">40</button>
+                            <button class="size-btn" onclick="selectSize(this)">42</button>
+                        </div></div>
+                        <button class="buy-btn" onclick="addToCart('Short Jeans Claro')">Comprar</button>
+                    </div>
+                </article>
+                <article class="product-card">
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/928a/7d41/019c4f41b08b/9b0e0778a1c3/01306498800-p/01306498800-p.jpg?ts=1770882998709&w=850&f=auto" class="main-display-img" data-main="true">
+                        <div class="thumbnails">
+                            <img src="https://static.bershka.net/assets/public/928a/7d41/019c4f41b08b/9b0e0778a1c3/01306498800-p/01306498800-p.jpg?ts=1770882998709&w=850&f=auto" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/914e/32b1/02e843a08ade/08437131bf8e/01306498800-a4o/01306498800-a4o.jpg?ts=1770882983103&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/3c18/ab5e/79f048998979/a843f17ebe1f/01306498800-b/01306498800-b.jpg?ts=1770882983186&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="badge">Utilitário</span>
+                        <h3>Bermuda Cargo</h3>
+                        <p class="price">R$ 135,00</p>
+                        <div class="size-selector"><div class="size-options">
+                            <button class="size-btn" onclick="selectSize(this)">P</button>
+                            <button class="size-btn" onclick="selectSize(this)">M</button>
+                            <button class="size-btn" onclick="selectSize(this)">G</button>
+                        </div></div>
+                        <button class="buy-btn" onclick="addToCart('Bermuda Cargo')">Comprar</button>
                     </div>
                 </article>
             </div>
         </section>
     </main>
+
+    <footer class="main-footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <div class="logo">3F <span>STORE</span></div>
+                <p>Streetwear com atitude.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#camisas">Camisas</a>
+                <a href="#calcas">Calças</a>
+                <a href="#moletons">Moletons</a>
+                <a href="#shorts">Shorts</a>
+            </div>
+            <p class="copyright">© 2026 3F STORE. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
     <script>
         let count = 0;
         let userData = null;
+
+        const caneladaColors = {
+            preta: ["canelada-preta-1.jpg", "canelada-preta-2.jpg", "canelada-preta-3.jpg"],
+            branca: ["canelada-branca-1.jpg", "canelada-branca-2.jpg", "canelada-branca-3.jpg"],
+            vermelha: ["canelada-vermelha-1.jpg", "canelada-vermelha-2.jpg", "canelada-vermelha-3.jpg"],
+            azul: ["canelada-azul-1.jpg", "canelada-azul-2.jpg", "canelada-azul-3.jpg"],
+            verde: ["canelada-verde-militar-1.jpg", "canelada-verde-militar-2.jpg", "canelada-verde-militar-3.jpg"]
+        };
+
         function toggleModal() {
             const modal = document.getElementById('login-modal');
             modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
         }
+
         function switchForm(type) {
             document.getElementById('login-form').style.display = (type === 'login') ? 'block' : 'none';
             document.getElementById('register-form').style.display = (type === 'register') ? 'block' : 'none';
         }
+
         function selectSize(btn) {
             const parent = btn.parentElement;
             parent.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
         }
+
         function changeImage(thumb) {
             const container = thumb.parentElement.parentElement;
             const mainImg = container.querySelector('.main-display-img');
@@ -269,32 +523,50 @@
             container.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
             thumb.classList.add('active');
         }
+
+        function selectColor(btn, productId) {
+            const parent = btn.parentElement;
+            parent.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            const color = btn.getAttribute('data-color');
+            if (productId === 'canelada') {
+                const images = caneladaColors[color];
+                const mainImg = document.getElementById('canelada-main');
+                const thumbs = document.getElementById('canelada-thumbs').querySelectorAll('.thumb');
+                mainImg.src = images[0];
+                thumbs.forEach((thumb, i) => {
+                    thumb.src = images[i];
+                    thumb.classList.remove('active');
+                });
+                thumbs[0].classList.add('active');
+            }
+        }
+
         function handleAuth(type) {
             if (type === 'register') {
                 const name = document.getElementById('reg-name').value;
                 const street = document.getElementById('reg-street').value;
                 if (!name || !street) { alert("Preencha o nome e o endereço!"); return; }
                 userData = { name, street };
-                alert(`Cadastro realizado com sucesso!`);
+                alert("Cadastro realizado com sucesso!");
             } else {
                 if (!userData) { alert("Usuário não encontrado!"); return; }
                 alert("Login realizado!");
             }
             toggleModal();
         }
+
         function addToCart(productName) {
-            if (!userData) {
-                alert("Faça login para comprar!");
-                toggleModal();
-                return;
-            }
+            if (!userData) { alert("Faça login para comprar!"); toggleModal(); return; }
             const card = event.target.closest('.product-card');
             const size = card.querySelector('.size-btn.active');
             if (!size) { alert("Selecione um tamanho!"); return; }
-          
+            let colorText = '';
+            const activeColor = card.querySelector('.color-btn.active');
+            if (activeColor) colorText = "\nCor: " + activeColor.title;
             count++;
             document.getElementById('cart-count').innerText = count;
-            alert(`✅ Confirmado!\nProduto: ${productName}\nTamanho: ${size.innerText}\nEntrega: ${userData.street}`);
+            alert("✅ Confirmado!\nProduto: " + productName + colorText + "\nTamanho: " + size.innerText + "\nEntrega: " + userData.street);
         }
     </script>
 </body>
