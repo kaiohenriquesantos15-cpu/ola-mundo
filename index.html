@@ -106,6 +106,37 @@
                         <button class="buy-btn" onclick="addToCart('Camisa Estampada Street')">Comprar</button>
                     </div>
                 </article>
+                <article class="product-card" data-product="camisa-canelada">
+                    <div class="img-container">
+                        <img src="https://static.bershka.net/assets/public/101c/a54d/573d4aab870e/7b6f4eea5047/02481538810-p/02481538810-p.jpg?ts=1783526442754&w=850&f=auto"
+                            class="main-display-img" data-main="true">
+                        <div class="thumbnails">
+                            <img src="https://static.bershka.net/assets/public/101c/a54d/573d4aab870e/7b6f4eea5047/02481538810-p/02481538810-p.jpg?ts=1783526442754&w=850&f=auto"
+                                onclick="changeImage(this)" class="thumb active" data-color="cinza">
+                            <img src="https://static.bershka.net/assets/public/b16f/3f70/5d944bcebfb1/cabe6f5c70d9/02481001810-a4o/02481001810-a4o.jpg?ts=1778481712058&w=850&f=auto"
+                                onclick="changeImage(this)" class="thumb" data-color="cinza">
+                            <img src="https://static.bershka.net/assets/public/cc17/274e/c90c43329032/9fd973ab4c50/02481001810-b/02481001810-b.jpg?ts=1778481711714&w=850&f=auto"
+                                onclick="changeImage(this)" class="thumb" data-color="cinza">
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <h3>Camisa Canelada</h3>
+                        <p class="price">R$ 130,00</p>
+                        <div class="size-selector">
+                            <div class="color-options">
+                                <button class="color-btn active" style="background:#8a8a8a;" title="Cinza" data-color="cinza" onclick="selectColor(this)"></button>
+                                <button class="color-btn" style="background:#111;" title="Preta" data-color="preta" onclick="selectColor(this)"></button>
+                                <button class="color-btn" style="background:#f5f5f5;" title="Branca" data-color="branca" onclick="selectColor(this)"></button>
+                            </div>
+                            <div class="size-options">
+                                <button class="size-btn" onclick="selectSize(this)">P</button>
+                                <button class="size-btn" onclick="selectSize(this)">M</button>
+                                <button class="size-btn" onclick="selectSize(this)">G</button>
+                            </div>
+                        </div>
+                        <button class="buy-btn" onclick="addToCart('Camisa Canelada')">Comprar</button>
+                    </div>
+                </article>
             </div>
         </section>
         <section id="calcas">
@@ -283,6 +314,28 @@
     <script>
         let count = 0;
         let userData = null;
+
+        // Dados de imagens por cor para a Camisa Canelada
+        const productColors = {
+            'camisa-canelada': {
+                cinza: [
+                    'https://static.bershka.net/assets/public/101c/a54d/573d4aab870e/7b6f4eea5047/02481538810-p/02481538810-p.jpg?ts=1783526442754&w=850&f=auto',
+                    'https://static.bershka.net/assets/public/b16f/3f70/5d944bcebfb1/cabe6f5c70d9/02481001810-a4o/02481001810-a4o.jpg?ts=1778481712058&w=850&f=auto',
+                    'https://static.bershka.net/assets/public/cc17/274e/c90c43329032/9fd973ab4c50/02481001810-b/02481001810-b.jpg?ts=1778481711714&w=850&f=auto'
+                ],
+                preta: [
+                    'https://static.bershka.net/assets/public/4e5d/50fd/35444b138af5/b9ecef17a361/02481538800-p/02481538800-p.jpg?ts=1779176039421&w=850&f=auto',
+                    'https://static.bershka.net/assets/public/5891/5dbc/a4a64dcf9959/57011a6c8720/02481538800-a4o/02481538800-a4o.jpg?ts=1778681067692&w=850&f=auto',
+                    'https://static.bershka.net/assets/public/294c/73ee/964b4209b0c8/970f3fd5f33c/02481538800-b/02481538800-b.jpg?ts=1778681066847&w=850&f=auto'
+                ],
+                branca: [
+                    'https://static.bershka.net/assets/public/3886/8466/1a6a4ce9a258/6fa55d92317c/02481302812-p/02481302812-p.jpg?ts=1785234866221&w=850&f=auto',
+                    'https://static.bershka.net/assets/public/764b/034b/aa094ba5b4ab/5b4de8b19b79/02481302812-a4o/02481302812-a4o.jpg?ts=1784627734930&w=850&f=auto',
+                    'https://static.bershka.net/assets/public/2d62/fcc5/4edb4231b2a8/032b44e96061/02481302812-b/02481302812-b.jpg?ts=1784627735032&w=850&f=auto'
+                ]
+            }
+        };
+
         function toggleModal() {
             const modal = document.getElementById('login-modal');
             modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
@@ -302,6 +355,34 @@
             mainImg.src = thumb.src;
             container.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
             thumb.classList.add('active');
+        }
+        function selectColor(btn) {
+            const card = btn.closest('.product-card');
+            const productId = card.dataset.product;
+            const color = btn.dataset.color;
+
+            // Marca a bolinha ativa
+            const colorParent = btn.parentElement;
+            colorParent.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            // Troca as imagens (main + thumbs)
+            if (productColors[productId] && productColors[productId][color]) {
+                const images = productColors[productId][color];
+                const mainImg = card.querySelector('.main-display-img');
+                const thumbs = card.querySelectorAll('.thumb');
+
+                mainImg.src = images[0];
+                thumbs.forEach((thumb, i) => {
+                    if (images[i]) {
+                        thumb.src = images[i];
+                        thumb.dataset.color = color;
+                    }
+                });
+                // Ativa a primeira miniatura
+                thumbs.forEach(t => t.classList.remove('active'));
+                if (thumbs[0]) thumbs[0].classList.add('active');
+            }
         }
         function handleAuth(type) {
             if (type === 'register') {
@@ -326,11 +407,17 @@
             const size = card.querySelector('.size-btn.active');
             if (!size) { alert("Selecione um tamanho!"); return; }
 
+            const colorBtn = card.querySelector('.color-btn.active');
+            const colorName = colorBtn ? colorBtn.title : null;
+
             count++;
             document.getElementById('cart-count').innerText = count;
-            alert(`✅ Confirmado!\nProduto: ${productName}\nTamanho: ${size.innerText}\nEntrega: ${userData.street}`);
+
+            let msg = `✅ Confirmado!\nProduto: ${productName}\nTamanho: ${size.innerText}`;
+            if (colorName) msg += `\nCor: ${colorName}`;
+            msg += `\nEntrega: ${userData.street}`;
+            alert(msg);
         }
     </script>
 </body>
-
 </html>
