@@ -10,19 +10,17 @@
 </head>
 
 <body>
-    <!-- Toast notifications -->
     <div id="toast" class="toast"></div>
 
-    <!-- LOGIN / CADASTRO MODAL -->
     <div id="login-modal" class="modal-overlay">
         <div class="modal-content">
-            <span class="close-modal" onclick="closeLoginModal()">×</span>
+            <span class="close-modal" onclick="closeLoginModal()">&times;</span>
             <div id="login-form">
                 <h2>Entrar na 3F STORE</h2>
                 <input type="email" id="login-email" placeholder="Seu e-mail">
                 <input type="password" id="login-pass" placeholder="Sua senha">
                 <button class="buy-btn" onclick="handleAuth('login')">Entrar</button>
-                <p>Não tem conta? <a href="#" onclick="switchForm('register')">Cadastre-se</a></p>
+                <p>Não tem conta? <a href="#" onclick="switchForm('register'); return false;">Cadastre-se</a></p>
             </div>
             <div id="register-form" style="display: none;">
                 <h2>Criar Conta</h2>
@@ -34,15 +32,14 @@
                 <input type="text" id="reg-street" placeholder="Rua e Número">
                 <input type="text" id="reg-city" placeholder="Cidade/Estado">
                 <button class="buy-btn" onclick="handleAuth('register')">Finalizar Cadastro</button>
-                <p>Já tem conta? <a href="#" onclick="switchForm('login')">Fazer Login</a></p>
+                <p>Já tem conta? <a href="#" onclick="switchForm('login'); return false;">Fazer Login</a></p>
             </div>
         </div>
     </div>
 
-    <!-- CARRINHO MODAL -->
     <div id="cart-modal" class="modal-overlay">
         <div class="modal-content cart-modal-content">
-            <span class="close-modal" onclick="closeCartModal()">×</span>
+            <span class="close-modal" onclick="closeCartModal()">&times;</span>
             <h2>Seu Carrinho</h2>
             <div id="cart-items" class="cart-items"></div>
             <div class="cart-footer">
@@ -72,7 +69,7 @@
                     <button class="login-btn" onclick="openLoginModal()">Entrar</button>
                 </div>
                 <div class="cart-icon" onclick="openCartModal()" title="Abrir carrinho">
-                    🛒 <span id="cart-count">0</span>
+                    &#128722; <span id="cart-count">0</span>
                 </div>
             </div>
         </div>
@@ -84,15 +81,11 @@
             <div class="product-grid">
                 <article class="product-card">
                     <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/327f/d465/ba6544c68d17/5c8279f7a662/00069154250-p/00069154250-p.jpg"
-                            class="main-display-img" data-main="true">
+                        <img src="https://static.bershka.net/assets/public/327f/d465/ba6544c68d17/5c8279f7a662/00069154250-p/00069154250-p.jpg" class="main-display-img" data-main="true">
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/327f/d465/ba6544c68d17/5c8279f7a662/00069154250-p/00069154250-p.jpg"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/0e3c/7776/fdbf4105b127/0155aa573671/00069154250-a4o/00069154250-a4o.jpg?ts=1777561199462&w=850"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/4882/0e2f/ea4b48f8a728/e6f06e51e170/00069154250-b/00069154250-b.jpg?ts=1777561199699&w=850"
-                                onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/327f/d465/ba6544c68d17/5c8279f7a662/00069154250-p/00069154250-p.jpg" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/0e3c/7776/fdbf4105b127/0155aa573671/00069154250-a4o/00069154250-a4o.jpg?ts=1777561199462&w=850" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/4882/0e2f/ea4b48f8a728/e6f06e51e170/00069154250-b/00069154250-b.jpg?ts=1777561199699&w=850" onclick="changeImage(this)" class="thumb">
                         </div>
                     </div>
                     <div class="product-info">
@@ -100,25 +93,21 @@
                         <p class="price">R$ 100,00</p>
                         <div class="size-selector">
                             <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">P</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">M</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">G</button>
                             </div>
                         </div>
-                        <button class="buy-btn" onclick="addToCart('Camisa lisa Branca', 100)">Comprar</button>
+                        <button type="button" class="buy-btn" onclick="addToCart(event, 'Camisa lisa Branca', 100)">Comprar</button>
                     </div>
                 </article>
                 <article class="product-card" data-product="camisa-canelada">
                     <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/101c/a54d/573d4aab870e/7b6f4eea5047/02481538810-p/02481538810-p.jpg?ts=1783526442754&w=850&f=auto"
-                            class="main-display-img" data-main="true">
+                        <img src="https://static.bershka.net/assets/public/101c/a54d/573d4aab870e/7b6f4eea5047/02481538810-p/02481538810-p.jpg?ts=1783526442754&w=850&f=auto" class="main-display-img" data-main="true">
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/101c/a54d/573d4aab870e/7b6f4eea5047/02481538810-p/02481538810-p.jpg?ts=1783526442754&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb active" data-color="cinza">
-                            <img src="https://static.bershka.net/assets/public/b16f/3f70/5d944bcebfb1/cabe6f5c70d9/02481001810-a4o/02481001810-a4o.jpg?ts=1778481712058&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb" data-color="cinza">
-                            <img src="https://static.bershka.net/assets/public/cc17/274e/c90c43329032/9fd973ab4c50/02481001810-b/02481001810-b.jpg?ts=1778481711714&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb" data-color="cinza">
+                            <img src="https://static.bershka.net/assets/public/101c/a54d/573d4aab870e/7b6f4eea5047/02481538810-p/02481538810-p.jpg?ts=1783526442754&w=850&f=auto" onclick="changeImage(this)" class="thumb active" data-color="cinza">
+                            <img src="https://static.bershka.net/assets/public/b16f/3f70/5d944bcebfb1/cabe6f5c70d9/02481001810-a4o/02481001810-a4o.jpg?ts=1778481712058&w=850&f=auto" onclick="changeImage(this)" class="thumb" data-color="cinza">
+                            <img src="https://static.bershka.net/assets/public/cc17/274e/c90c43329032/9fd973ab4c50/02481001810-b/02481001810-b.jpg?ts=1778481711714&w=850&f=auto" onclick="changeImage(this)" class="thumb" data-color="cinza">
                         </div>
                     </div>
                     <div class="product-info">
@@ -126,30 +115,26 @@
                         <p class="price">R$ 130,00</p>
                         <div class="size-selector">
                             <div class="color-options">
-                                <button class="color-btn active" style="background:#8a8a8a;" title="Cinza" data-color="cinza" onclick="selectColor(this)"></button>
-                                <button class="color-btn" style="background:#111;" title="Preta" data-color="preta" onclick="selectColor(this)"></button>
-                                <button class="color-btn" style="background:#f5f5f5;" title="Branca" data-color="branca" onclick="selectColor(this)"></button>
+                                <button type="button" class="color-btn active" style="background:#8a8a8a;" title="Cinza" data-color="cinza" onclick="selectColor(this)"></button>
+                                <button type="button" class="color-btn" style="background:#111;" title="Preta" data-color="preta" onclick="selectColor(this)"></button>
+                                <button type="button" class="color-btn" style="background:#f5f5f5;" title="Branca" data-color="branca" onclick="selectColor(this)"></button>
                             </div>
                             <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">P</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">M</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">G</button>
                             </div>
                         </div>
-                        <button class="buy-btn" onclick="addToCart('Camisa Canelada', 130)">Comprar</button>
+                        <button type="button" class="buy-btn" onclick="addToCart(event, 'Camisa Canelada', 130)">Comprar</button>
                     </div>
                 </article>
                 <article class="product-card">
                     <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/85ea/f474/17a34db2883b/d28eab0a7a20/02714443401-p/02714443401-p.jpg?ts=1785491587674&w=850&f=auto"
-                            class="main-display-img" data-main="true">
+                        <img src="https://static.bershka.net/assets/public/85ea/f474/17a34db2883b/d28eab0a7a20/02714443401-p/02714443401-p.jpg?ts=1785491587674&w=850&f=auto" class="main-display-img" data-main="true">
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/85ea/f474/17a34db2883b/d28eab0a7a20/02714443401-p/02714443401-p.jpg?ts=1785491587674&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/9673/ed71/95e648ff94a7/7cb9b12689ea/02714443401-a4o/02714443401-a4o.jpg?ts=1783080325931&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/a175/f6bd/07664007983b/3375afc47140/02714443401-b/02714443401-b.jpg?ts=1783080325719&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/85ea/f474/17a34db2883b/d28eab0a7a20/02714443401-p/02714443401-p.jpg?ts=1785491587674&w=850&f=auto" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/9673/ed71/95e648ff94a7/7cb9b12689ea/02714443401-a4o/02714443401-a4o.jpg?ts=1783080325931&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/a175/f6bd/07664007983b/3375afc47140/02714443401-b/02714443401-b.jpg?ts=1783080325719&w=850&f=auto" onclick="changeImage(this)" class="thumb">
                         </div>
                     </div>
                     <div class="product-info">
@@ -157,12 +142,12 @@
                         <p class="price">R$ 150,00</p>
                         <div class="size-selector">
                             <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">P</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">M</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">G</button>
                             </div>
                         </div>
-                        <button class="buy-btn" onclick="addToCart('Camisa Boxy Estampada', 150)">Comprar</button>
+                        <button type="button" class="buy-btn" onclick="addToCart(event, 'Camisa Boxy Estampada', 150)">Comprar</button>
                     </div>
                 </article>
             </div>
@@ -172,15 +157,11 @@
             <div class="product-grid">
                 <article class="product-card">
                     <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/bfec/e67f/65c94e64883e/421891c94e4b/01501732805-21-p/01501732805-21-p.jpg?ts=1776270191731&w=850&f=auto"
-                            class="main-display-img" data-main="true">
+                        <img src="https://static.bershka.net/assets/public/bfec/e67f/65c94e64883e/421891c94e4b/01501732805-21-p/01501732805-21-p.jpg?ts=1776270191731&w=850&f=auto" class="main-display-img" data-main="true">
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/bfec/e67f/65c94e64883e/421891c94e4b/01501732805-21-p/01501732805-21-p.jpg?ts=1776270191731&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/2ddd/2298/e8074cd8b60b/605b94986353/01501732805-a4o/01501732805-a4o.jpg?ts=1768289593039&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/de0a/82ac/5d8d4decab2a/846f2d670fb1/01501732805-b/01501732805-b.jpg?ts=1768289592371&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/bfec/e67f/65c94e64883e/421891c94e4b/01501732805-21-p/01501732805-21-p.jpg?ts=1776270191731&w=850&f=auto" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/2ddd/2298/e8074cd8b60b/605b94986353/01501732805-a4o/01501732805-a4o.jpg?ts=1768289593039&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/de0a/82ac/5d8d4decab2a/846f2d670fb1/01501732805-b/01501732805-b.jpg?ts=1768289592371&w=850&f=auto" onclick="changeImage(this)" class="thumb">
                         </div>
                     </div>
                     <div class="product-info">
@@ -188,25 +169,21 @@
                         <p class="price">R$ 200,00</p>
                         <div class="size-selector">
                             <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">P</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">M</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">G</button>
                             </div>
                         </div>
-                        <button class="buy-btn" onclick="addToCart('Calça Jogger Moletom', 200)">Comprar</button>
+                        <button type="button" class="buy-btn" onclick="addToCart(event, 'Calça Jogger Moletom', 200)">Comprar</button>
                     </div>
                 </article>
                 <article class="product-card">
                     <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/993d/f869/985d44349954/f8f247cb8885/05382352433-02-p/05382352433-02-p.jpg?ts=1772117621052&w=850&f=auto"
-                            class="main-display-img" data-main="true">
+                        <img src="https://static.bershka.net/assets/public/993d/f869/985d44349954/f8f247cb8885/05382352433-02-p/05382352433-02-p.jpg?ts=1772117621052&w=850&f=auto" class="main-display-img" data-main="true">
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/993d/f869/985d44349954/f8f247cb8885/05382352433-02-p/05382352433-02-p.jpg?ts=1772117621052&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/ad0d/153c/f62b4515ba30/6a825dbeda5f/05382352433-a4o/05382352433-a4o.jpg?ts=1768901982815&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/201d/f07b/ee1b427b91da/612255290dab/05382352433-b/05382352433-b.jpg?ts=1768901982907&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/993d/f869/985d44349954/f8f247cb8885/05382352433-02-p/05382352433-02-p.jpg?ts=1772117621052&w=850&f=auto" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/ad0d/153c/f62b4515ba30/6a825dbeda5f/05382352433-a4o/05382352433-a4o.jpg?ts=1768901982815&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/201d/f07b/ee1b427b91da/612255290dab/05382352433-b/05382352433-b.jpg?ts=1768901982907&w=850&f=auto" onclick="changeImage(this)" class="thumb">
                         </div>
                     </div>
                     <div class="product-info">
@@ -214,12 +191,12 @@
                         <p class="price">R$ 220,00</p>
                         <div class="size-selector">
                             <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">38</button>
-                                <button class="size-btn" onclick="selectSize(this)">40</button>
-                                <button class="size-btn" onclick="selectSize(this)">42</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">38</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">40</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">42</button>
                             </div>
                         </div>
-                        <button class="buy-btn" onclick="addToCart('Calça Jeans Baggy', 220)">Comprar</button>
+                        <button type="button" class="buy-btn" onclick="addToCart(event, 'Calça Jeans Baggy', 220)">Comprar</button>
                     </div>
                 </article>
             </div>
@@ -229,15 +206,11 @@
             <div class="product-grid">
                 <article class="product-card">
                     <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg"
-                            class="main-display-img" data-main="true">
+                        <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg" class="main-display-img" data-main="true">
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/7cfd/5b3f/db60450f9324/c4743a1ff70d/01259190810-a4o/01259190810-a4o.jpg?ts=1772123507351&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/8f7a/b8d6/f7f94d93ba79/7f3188e4653f/01259190810-b/01259190810-b.jpg?ts=1772123507350&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/bc6f/d61c/1228402b83e0/e6080eb5a8a1/01259190810-p/01259190810-p.jpg" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/7cfd/5b3f/db60450f9324/c4743a1ff70d/01259190810-a4o/01259190810-a4o.jpg?ts=1772123507351&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/8f7a/b8d6/f7f94d93ba79/7f3188e4653f/01259190810-b/01259190810-b.jpg?ts=1772123507350&w=850&f=auto" onclick="changeImage(this)" class="thumb">
                         </div>
                     </div>
                     <div class="product-info">
@@ -245,25 +218,21 @@
                         <p class="price">R$ 200,00</p>
                         <div class="size-selector">
                             <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                                <button class="size-btn" onclick="selectSize(this)">GG</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">M</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">G</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">GG</button>
                             </div>
                         </div>
-                        <button class="buy-btn" onclick="addToCart('Moletom Estampado Pro', 200)">Comprar</button>
+                        <button type="button" class="buy-btn" onclick="addToCart(event, 'Moletom Estampado Pro', 200)">Comprar</button>
                     </div>
                 </article>
                 <article class="product-card">
                     <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/96fb/5eb3/1fa44fc9b766/19a9bb017b65/00847741800-p/00847741800-p.jpg?ts=1764685148735&w=850&f=auto"
-                            class="main-display-img" data-main="true">
+                        <img src="https://static.bershka.net/assets/public/96fb/5eb3/1fa44fc9b766/19a9bb017b65/00847741800-p/00847741800-p.jpg?ts=1764685148735&w=850&f=auto" class="main-display-img" data-main="true">
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/96fb/5eb3/1fa44fc9b766/19a9bb017b65/00847741800-p/00847741800-p.jpg?ts=1764685148735&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/ec49/8931/16194971959b/ebd3cb618d33/00847741800-a4o/00847741800-a4o.jpg?ts=1763991084007&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/bb28/9632/a58f4c36838a/9495576e5c8d/00847741800-b/00847741800-b.jpg?ts=1763991083821&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/96fb/5eb3/1fa44fc9b766/19a9bb017b65/00847741800-p/00847741800-p.jpg?ts=1764685148735&w=850&f=auto" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/ec49/8931/16194971959b/ebd3cb618d33/00847741800-a4o/00847741800-a4o.jpg?ts=1763991084007&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/bb28/9632/a58f4c36838a/9495576e5c8d/00847741800-b/00847741800-b.jpg?ts=1763991083821&w=850&f=auto" onclick="changeImage(this)" class="thumb">
                         </div>
                     </div>
                     <div class="product-info">
@@ -271,12 +240,12 @@
                         <p class="price">R$ 160,00</p>
                         <div class="size-selector">
                             <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
-                                <button class="size-btn" onclick="selectSize(this)">GG</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">M</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">G</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">GG</button>
                             </div>
                         </div>
-                        <button class="buy-btn" onclick="addToCart('Moletom Liso Preto', 160)">Comprar</button>
+                        <button type="button" class="buy-btn" onclick="addToCart(event, 'Moletom Liso Preto', 160)">Comprar</button>
                     </div>
                 </article>
             </div>
@@ -286,15 +255,11 @@
             <div class="product-grid">
                 <article class="product-card">
                     <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/fd59/fbae/0f5d4ddca992/4586edda050a/01196534800-p/01196534800-p.jpg"
-                            class="main-display-img" data-main="true">
+                        <img src="https://static.bershka.net/assets/public/fd59/fbae/0f5d4ddca992/4586edda050a/01196534800-p/01196534800-p.jpg" class="main-display-img" data-main="true">
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/fd59/fbae/0f5d4ddca992/4586edda050a/01196534800-p/01196534800-p.jpg"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/553b/7b69/0f19496488ad/6dfd89ff8d4d/01196534800-a4o/01196534800-a4o.jpg?ts=1771347701514&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/c922/08fc/bb864b4e8f58/60942d92c8e1/01196534800-b/01196534800-b.jpg?ts=1771347701260&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/fd59/fbae/0f5d4ddca992/4586edda050a/01196534800-p/01196534800-p.jpg" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/553b/7b69/0f19496488ad/6dfd89ff8d4d/01196534800-a4o/01196534800-a4o.jpg?ts=1771347701514&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/c922/08fc/bb864b4e8f58/60942d92c8e1/01196534800-b/01196534800-b.jpg?ts=1771347701260&w=850&f=auto" onclick="changeImage(this)" class="thumb">
                         </div>
                     </div>
                     <div class="product-info">
@@ -302,25 +267,21 @@
                         <p class="price">R$ 120,00</p>
                         <div class="size-selector">
                             <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">38</button>
-                                <button class="size-btn" onclick="selectSize(this)">40</button>
-                                <button class="size-btn" onclick="selectSize(this)">42</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">38</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">40</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">42</button>
                             </div>
                         </div>
-                        <button class="buy-btn" onclick="addToCart('Bermuda Jeans Baggy', 120)">Comprar</button>
+                        <button type="button" class="buy-btn" onclick="addToCart(event, 'Bermuda Jeans Baggy', 120)">Comprar</button>
                     </div>
                 </article>
                 <article class="product-card">
                     <div class="img-container">
-                        <img src="https://static.bershka.net/assets/public/928a/7d41/019c4f41b08b/9b0e0778a1c3/01306498800-p/01306498800-p.jpg?ts=1770882998709&w=850&f=auto"
-                            class="main-display-img" data-main="true">
+                        <img src="https://static.bershka.net/assets/public/928a/7d41/019c4f41b08b/9b0e0778a1c3/01306498800-p/01306498800-p.jpg?ts=1770882998709&w=850&f=auto" class="main-display-img" data-main="true">
                         <div class="thumbnails">
-                            <img src="https://static.bershka.net/assets/public/928a/7d41/019c4f41b08b/9b0e0778a1c3/01306498800-p/01306498800-p.jpg?ts=1770882998709&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb active">
-                            <img src="https://static.bershka.net/assets/public/914e/32b1/02e843a08ade/08437131bf8e/01306498800-a4o/01306498800-a4o.jpg?ts=1770882983103&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
-                            <img src="https://static.bershka.net/assets/public/3c18/ab5e/79f048998979/a843f17ebe1f/01306498800-b/01306498800-b.jpg?ts=1770882983186&w=850&f=auto"
-                                onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/928a/7d41/019c4f41b08b/9b0e0778a1c3/01306498800-p/01306498800-p.jpg?ts=1770882998709&w=850&f=auto" onclick="changeImage(this)" class="thumb active">
+                            <img src="https://static.bershka.net/assets/public/914e/32b1/02e843a08ade/08437131bf8e/01306498800-a4o/01306498800-a4o.jpg?ts=1770882983103&w=850&f=auto" onclick="changeImage(this)" class="thumb">
+                            <img src="https://static.bershka.net/assets/public/3c18/ab5e/79f048998979/a843f17ebe1f/01306498800-b/01306498800-b.jpg?ts=1770882983186&w=850&f=auto" onclick="changeImage(this)" class="thumb">
                         </div>
                     </div>
                     <div class="product-info">
@@ -328,12 +289,12 @@
                         <p class="price">R$ 90,00</p>
                         <div class="size-selector">
                             <div class="size-options">
-                                <button class="size-btn" onclick="selectSize(this)">P</button>
-                                <button class="size-btn" onclick="selectSize(this)">M</button>
-                                <button class="size-btn" onclick="selectSize(this)">G</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">P</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">M</button>
+                                <button type="button" class="size-btn" onclick="selectSize(this)">G</button>
                             </div>
                         </div>
-                        <button class="buy-btn" onclick="addToCart('Short Moletom Urban', 90)">Comprar</button>
+                        <button type="button" class="buy-btn" onclick="addToCart(event, 'Short Moletom Urban', 90)">Comprar</button>
                     </div>
                 </article>
             </div>
@@ -342,14 +303,21 @@
 
     <footer class="main-footer">
         <div class="container">
-            <p>© 2026 3F STORE — Todos os direitos reservados</p>
+            <p>&copy; 2026 3F STORE — Todos os direitos reservados</p>
         </div>
     </footer>
 
     <script>
-        // ========== ESTADO ==========
-        let cart = JSON.parse(localStorage.getItem('3f_cart')) || [];
-        let userData = JSON.parse(localStorage.getItem('3f_user')) || null;
+        let cart = [];
+        let userData = null;
+
+        try {
+            cart = JSON.parse(localStorage.getItem('3f_cart')) || [];
+            userData = JSON.parse(localStorage.getItem('3f_user')) || null;
+        } catch (err) {
+            cart = [];
+            userData = null;
+        }
 
         const productColors = {
             'camisa-canelada': {
@@ -371,16 +339,17 @@
             }
         };
 
-        // ========== INICIALIZAÇÃO ==========
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', function () {
             updateCartUI();
             updateUserUI();
-            document.querySelectorAll('.modal-overlay').forEach(modal => {
-                modal.addEventListener('click', (e) => {
+
+            document.querySelectorAll('.modal-overlay').forEach(function (modal) {
+                modal.addEventListener('click', function (e) {
                     if (e.target === modal) modal.style.display = 'none';
                 });
             });
-            document.addEventListener('keydown', (e) => {
+
+            document.addEventListener('keydown', function (e) {
                 if (e.key === 'Escape') {
                     closeLoginModal();
                     closeCartModal();
@@ -388,15 +357,16 @@
             });
         });
 
-        // ========== TOAST ==========
-        function showToast(message, type = 'success') {
-            const toast = document.getElementById('toast');
+        function showToast(message, type) {
+            type = type || 'success';
+            var toast = document.getElementById('toast');
             toast.textContent = message;
             toast.className = 'toast show ' + type;
-            setTimeout(() => toast.classList.remove('show'), 2800);
+            setTimeout(function () {
+                toast.classList.remove('show');
+            }, 2800);
         }
 
-        // ========== MODAIS ==========
         function openLoginModal() {
             document.getElementById('login-modal').style.display = 'flex';
             switchForm('login');
@@ -416,34 +386,38 @@
             document.getElementById('register-form').style.display = (type === 'register') ? 'block' : 'none';
         }
 
-        // ========== USUÁRIO ==========
         function handleAuth(type) {
             if (type === 'register') {
-                const name = document.getElementById('reg-name').value.trim();
-                const email = document.getElementById('reg-email').value.trim();
-                const pass = document.getElementById('reg-pass').value;
-                const street = document.getElementById('reg-street').value.trim();
-                const city = document.getElementById('reg-city').value.trim();
+                var name = document.getElementById('reg-name').value.trim();
+                var email = document.getElementById('reg-email').value.trim();
+                var pass = document.getElementById('reg-pass').value;
+                var street = document.getElementById('reg-street').value.trim();
+                var city = document.getElementById('reg-city').value.trim();
                 if (!name || !email || !pass || !street) {
                     showToast('Preencha nome, e-mail, senha e endereço!', 'error');
                     return;
                 }
-                userData = { name, email, street, city: city || '' };
+                userData = { name: name, email: email, street: street, city: city || '' };
                 localStorage.setItem('3f_user', JSON.stringify(userData));
-                showToast(`Bem-vindo(a), ${name}! Cadastro realizado.`);
+                showToast('Bem-vindo(a), ' + name + '! Cadastro realizado.');
             } else {
-                const email = document.getElementById('login-email').value.trim();
-                const pass = document.getElementById('login-pass').value;
-                if (!email || !pass) {
+                var emailLogin = document.getElementById('login-email').value.trim();
+                var passLogin = document.getElementById('login-pass').value;
+                if (!emailLogin || !passLogin) {
                     showToast('Preencha e-mail e senha!', 'error');
                     return;
                 }
-                if (userData && userData.email === email) {
-                    showToast(`Olá de novo, ${userData.name}!`);
+                if (userData && userData.email === emailLogin) {
+                    showToast('Olá de novo, ' + userData.name + '!');
                 } else if (userData) {
-                    showToast(`Olá, ${userData.name}!`);
+                    showToast('Olá, ' + userData.name + '!');
                 } else {
-                    userData = { name: email.split('@')[0], email, street: 'Endereço não informado', city: '' };
+                    userData = {
+                        name: emailLogin.split('@')[0],
+                        email: emailLogin,
+                        street: 'Endereço não informado',
+                        city: ''
+                    };
                     localStorage.setItem('3f_user', JSON.stringify(userData));
                     showToast('Login realizado!');
                 }
@@ -460,81 +434,91 @@
         }
 
         function updateUserUI() {
-            const area = document.getElementById('user-area');
+            var area = document.getElementById('user-area');
             if (userData) {
-                area.innerHTML = `
-                    <span class="user-name" title="${userData.email}">Olá, ${userData.name.split(' ')[0]}</span>
-                    <button class="logout-btn" onclick="logout()">Sair</button>
-                `;
+                var firstName = userData.name.split(' ')[0];
+                area.innerHTML = '<span class="user-name" title="' + userData.email + '">Olá, ' + firstName + '</span>' +
+                    '<button type="button" class="logout-btn" onclick="logout()">Sair</button>';
             } else {
-                area.innerHTML = `<button class="login-btn" onclick="openLoginModal()">Entrar</button>`;
+                area.innerHTML = '<button type="button" class="login-btn" onclick="openLoginModal()">Entrar</button>';
             }
         }
 
-        // ========== PRODUTO ==========
         function selectSize(btn) {
-            const parent = btn.parentElement;
-            parent.querySelectorAll('.size-btn').forEach(b => b.classList.remove('active'));
+            var parent = btn.parentElement;
+            parent.querySelectorAll('.size-btn').forEach(function (b) {
+                b.classList.remove('active');
+            });
             btn.classList.add('active');
         }
 
         function changeImage(thumb) {
-            const container = thumb.parentElement.parentElement;
-            const mainImg = container.querySelector('.main-display-img');
+            var container = thumb.parentElement.parentElement;
+            var mainImg = container.querySelector('.main-display-img');
             mainImg.src = thumb.src;
-            container.querySelectorAll('.thumb').forEach(t => t.classList.remove('active'));
+            container.querySelectorAll('.thumb').forEach(function (t) {
+                t.classList.remove('active');
+            });
             thumb.classList.add('active');
         }
 
         function selectColor(btn) {
-            const card = btn.closest('.product-card');
-            const productId = card.dataset.product;
-            const color = btn.dataset.color;
+            var card = btn.closest('.product-card');
+            var productId = card.getAttribute('data-product');
+            var color = btn.getAttribute('data-color');
 
-            const colorParent = btn.parentElement;
-            colorParent.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'));
+            var colorParent = btn.parentElement;
+            colorParent.querySelectorAll('.color-btn').forEach(function (b) {
+                b.classList.remove('active');
+            });
             btn.classList.add('active');
 
             if (productColors[productId] && productColors[productId][color]) {
-                const images = productColors[productId][color];
-                const mainImg = card.querySelector('.main-display-img');
-                const thumbs = card.querySelectorAll('.thumb');
+                var images = productColors[productId][color];
+                var mainImg = card.querySelector('.main-display-img');
+                var thumbs = card.querySelectorAll('.thumb');
 
                 mainImg.src = images[0];
-                thumbs.forEach((thumb, i) => {
+                thumbs.forEach(function (thumb, i) {
                     if (images[i]) {
                         thumb.src = images[i];
-                        thumb.dataset.color = color;
+                        thumb.setAttribute('data-color', color);
                     }
                 });
-                thumbs.forEach(t => t.classList.remove('active'));
+                thumbs.forEach(function (t) { t.classList.remove('active'); });
                 if (thumbs[0]) thumbs[0].classList.add('active');
             }
         }
 
-        // ========== CARRINHO ==========
-        function addToCart(productName, price) {
+        function addToCart(e, productName, price) {
             if (!userData) {
                 showToast('Faça login para comprar!', 'error');
                 openLoginModal();
                 return;
             }
 
-            const card = event.target.closest('.product-card');
-            const sizeBtn = card.querySelector('.size-btn.active');
+            var card = e.target.closest('.product-card');
+            if (!card) {
+                showToast('Erro ao identificar o produto.', 'error');
+                return;
+            }
+
+            var sizeBtn = card.querySelector('.size-btn.active');
             if (!sizeBtn) {
                 showToast('Selecione um tamanho!', 'error');
                 return;
             }
-            const size = sizeBtn.innerText;
-            const colorBtn = card.querySelector('.color-btn.active');
-            const color = colorBtn ? colorBtn.title : null;
+            var size = sizeBtn.innerText;
+            var colorBtn = card.querySelector('.color-btn.active');
+            var color = colorBtn ? colorBtn.getAttribute('title') : null;
 
-            const existing = cart.find(item =>
-                item.name === productName &&
-                item.size === size &&
-                item.color === color
-            );
+            var existing = null;
+            for (var i = 0; i < cart.length; i++) {
+                if (cart[i].name === productName && cart[i].size === size && cart[i].color === color) {
+                    existing = cart[i];
+                    break;
+                }
+            }
 
             if (existing) {
                 existing.qty += 1;
@@ -551,7 +535,7 @@
 
             saveCart();
             updateCartUI();
-            showToast(`${productName} adicionado ao carrinho!`);
+            showToast(productName + ' adicionado ao carrinho!');
         }
 
         function saveCart() {
@@ -559,52 +543,48 @@
         }
 
         function updateCartUI() {
-            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
-            const badge = document.getElementById('cart-count');
+            var totalQty = 0;
+            for (var i = 0; i < cart.length; i++) totalQty += cart[i].qty;
+            var badge = document.getElementById('cart-count');
             badge.innerText = totalQty;
-            badge.classList.toggle('has-items', totalQty > 0);
+            if (totalQty > 0) badge.classList.add('has-items');
+            else badge.classList.remove('has-items');
         }
 
         function renderCart() {
-            const container = document.getElementById('cart-items');
-            const totalEl = document.getElementById('cart-total-value');
-            const checkoutBtn = document.getElementById('checkout-btn');
+            var container = document.getElementById('cart-items');
+            var totalEl = document.getElementById('cart-total-value');
+            var checkoutBtn = document.getElementById('checkout-btn');
 
             if (cart.length === 0) {
-                container.innerHTML = `
-                    <div class="cart-empty">
-                        <p>🛒</p>
-                        <p>Seu carrinho está vazio</p>
-                        <small>Adicione produtos para continuar</small>
-                    </div>
-                `;
+                container.innerHTML = '<div class="cart-empty"><p>&#128722;</p><p>Seu carrinho está vazio</p><small>Adicione produtos para continuar</small></div>';
                 totalEl.innerText = 'R$ 0,00';
                 checkoutBtn.disabled = true;
                 return;
             }
 
             checkoutBtn.disabled = false;
-            let total = 0;
-            container.innerHTML = cart.map((item, index) => {
-                const sub = item.price * item.qty;
+            var total = 0;
+            var html = '';
+            for (var index = 0; index < cart.length; index++) {
+                var item = cart[index];
+                var sub = item.price * item.qty;
                 total += sub;
-                return `
-                    <div class="cart-item">
-                        <div class="cart-item-info">
-                            <strong>${item.name}</strong>
-                            <span>${item.size}${item.color ? ' · ' + item.color : ''}</span>
-                            <span class="cart-item-price">R$ ${item.price.toFixed(2).replace('.', ',')}</span>
-                        </div>
-                        <div class="cart-item-actions">
-                            <button class="qty-btn" onclick="changeQty(${index}, -1)">−</button>
-                            <span class="qty-value">${item.qty}</span>
-                            <button class="qty-btn" onclick="changeQty(${index}, 1)">+</button>
-                            <button class="remove-btn" onclick="removeItem(${index})" title="Remover">🗑️</button>
-                        </div>
-                    </div>
-                `;
-            }).join('');
-
+                var colorText = item.color ? (' · ' + item.color) : '';
+                html += '<div class="cart-item">' +
+                    '<div class="cart-item-info">' +
+                    '<strong>' + item.name + '</strong>' +
+                    '<span>' + item.size + colorText + '</span>' +
+                    '<span class="cart-item-price">R$ ' + item.price.toFixed(2).replace('.', ',') + '</span>' +
+                    '</div>' +
+                    '<div class="cart-item-actions">' +
+                    '<button type="button" class="qty-btn" onclick="changeQty(' + index + ', -1)">−</button>' +
+                    '<span class="qty-value">' + item.qty + '</span>' +
+                    '<button type="button" class="qty-btn" onclick="changeQty(' + index + ', 1)">+</button>' +
+                    '<button type="button" class="remove-btn" onclick="removeItem(' + index + ')" title="Remover">&#128465;</button>' +
+                    '</div></div>';
+            }
+            container.innerHTML = html;
             totalEl.innerText = 'R$ ' + total.toFixed(2).replace('.', ',');
         }
 
@@ -617,12 +597,12 @@
         }
 
         function removeItem(index) {
-            const name = cart[index].name;
+            var name = cart[index].name;
             cart.splice(index, 1);
             saveCart();
             updateCartUI();
             renderCart();
-            showToast(`${name} removido.`);
+            showToast(name + ' removido.');
         }
 
         function clearCart() {
@@ -647,18 +627,22 @@
                 return;
             }
 
-            const total = cart.reduce((s, i) => s + i.price * i.qty, 0);
-            const itemsText = cart.map(i =>
-                `• ${i.name} (${i.size}${i.color ? ', ' + i.color : ''}) x${i.qty}`
-            ).join('\n');
+            var total = 0;
+            var itemsText = '';
+            for (var i = 0; i < cart.length; i++) {
+                var it = cart[i];
+                total += it.price * it.qty;
+                var c = it.color ? (', ' + it.color) : '';
+                itemsText += '• ' + it.name + ' (' + it.size + c + ') x' + it.qty + '\n';
+            }
 
             alert(
-                `✅ Pedido confirmado!\n\n` +
-                `Cliente: ${userData.name}\n` +
-                `Entrega: ${userData.street}${userData.city ? ', ' + userData.city : ''}\n\n` +
-                `Itens:\n${itemsText}\n\n` +
-                `Total: R$ ${total.toFixed(2).replace('.', ',')}\n\n` +
-                `Obrigado por comprar na 3F STORE!`
+                'Pedido confirmado!\n\n' +
+                'Cliente: ' + userData.name + '\n' +
+                'Entrega: ' + userData.street + (userData.city ? (', ' + userData.city) : '') + '\n\n' +
+                'Itens:\n' + itemsText + '\n' +
+                'Total: R$ ' + total.toFixed(2).replace('.', ',') + '\n\n' +
+                'Obrigado por comprar na 3F STORE!'
             );
 
             cart = [];
